@@ -8,8 +8,8 @@ const ACCENT_LIGHT = "rgba(255,255,255,0.06)";
 const HEAD = "'Inter Tight', Inter, ui-sans-serif, system-ui";
 const KAVELA_TEAL = "#3ED4C9"; // halo / brand tint
 // Button blue (inspired by your image)
-const PRIMARY = "#23B7C6";
-const PRIMARY_DARK = "#0E9FA3";
+const PRIMARY = "#264d52ff";
+const PRIMARY_DARK = "#1c8389ff";
 
 
 /* HOOKS */
@@ -106,6 +106,28 @@ function IconDefense() {
   );
 }
 
+/* BUTTON COMPONENT */
+function Button({ children, label = "Contact", href = "#contact", className = "" }) {
+  const content = children ?? label;
+  return (
+    <a
+      href={href}
+      aria-label={typeof content === "string" ? content : "Contact"}
+      className={`inline-flex items-center justify-center rounded-full px-7 py-3 
+                  text-sm md:text-base font-medium transition hover:brightness-110
+                  focus:outline-none focus:ring-2 focus:ring-offset-0 ${className}`}
+      style={{
+        background: `linear-gradient(180deg, ${PRIMARY} 0%, ${PRIMARY_DARK} 100%)`,
+        color: "#ffffff",
+        boxShadow: "0 8px 24px rgba(20,127,202,0.35)",
+      }}
+    >
+      {content}
+    </a>
+  );
+}
+
+
 /* LAYOUT */
 function Section({ id, children, pb = true }) {
   return (
@@ -123,7 +145,7 @@ function SectionDivider({ width = "w-2/3" }) {
   );
 }
 
-/* NAV — sizes kept; header transparent; menu 'Contact' removed; CTA blue+white */
+/* NAV */
 function Nav() {
   useSmoothAnchors();
   return (
@@ -132,7 +154,7 @@ function Nav() {
       style={{ backgroundColor: "rgba(0,0,0,0.55)", borderColor: BORDER }}
     >
       <nav className="mx-auto flex h-20 md:h-24 max-w-5xl items-center justify-between px-5 md:px-6">
-        {/* LOGO (keep your size) */}
+        {/* LOGO */}
         <a href="#hero" className="flex items-center gap-3">
           <img
             src="/8aa262cc-015b-4b77-9c83-a548e0c016b2.png"
@@ -141,14 +163,14 @@ function Nav() {
           />
         </a>
 
-        {/* Links (Contact removed to avoid repetition) */}
+        {/* Links */}
         <ul className="hidden lg:flex items-center gap-12 text-base md:text-lg uppercase tracking-wide">
           {[
+            { label: "Why Kavela", href: "#why" },
             { label: "About", href: "#about" },
             { label: "Our Value", href: "#value" },
             { label: "Approach", href: "#approach" },
             { label: "Industries", href: "#industries" },
-            { label: "Why Kavela", href: "#why" },
           ].map((item) => (
             <li key={item.label}>
               <a
@@ -162,18 +184,8 @@ function Nav() {
           ))}
         </ul>
 
-        {/* CTA in blue + white */}
-        <a
-          href="#contact"
-          className="inline-flex rounded-lg px-5 py-3 text-sm md:text-base font-medium transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-offset-0"
-          style={{
-            background: `linear-gradient(180deg, ${PRIMARY} 0%, ${PRIMARY_DARK} 100%)`,
-            color: "#ffffff",
-            boxShadow: "0 8px 24px rgba(20,127,202,0.35)",
-          }}
-        >
-          Contact
-        </a>
+        {/* CTA */}
+        <Button href="#contact" />
       </nav>
     </header>
   );
@@ -187,7 +199,7 @@ function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
       style={{ backgroundColor: BG, color: TEXT }}
     >
-      {/* Brand halo (keep subtle teal for brand identity) */}
+      {/* Brand halo */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -200,22 +212,19 @@ function Hero() {
       />
 
       <div className="relative mx-auto max-w-6xl px-6 md:px-8 pt-32 md:pt-24">
-        <div data-reveal className="space-y-6">
+        <div data-reveal className="space-y-8">
           <div className="opacity-0 translate-y-6 blur-sm transition-all duration-700" data-reveal-item style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}>
-<p
-  className="text-3xl md:text-4xl tracking-[0.3em] text-white/90"
-  style={{
-    fontFamily: "'Spectral', 'Marcellus', serif",
-    fontWeight: 600,
-    textTransform: "uppercase",
-    textShadow: "0 0 10px rgba(62, 212, 201, 0.35)",
-  }}
->
-  Strategy. Innovation. Execution.
-</p>
-
-
-
+            <p
+              className="text-3xl md:text-4xl tracking-[0.3em] text-white/90"
+              style={{
+                fontFamily: "'Spectral', 'Marcellus', serif",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                textShadow: "0 0 10px rgba(62, 212, 201, 0.35)",
+              }}
+            >
+              Strategy. Innovation. Execution.
+            </p>
           </div>
 
           <h1
@@ -234,18 +243,10 @@ function Hero() {
             We partner with leaders and innovators to bridge strategy and execution. Building initiatives. Connecting ecosystems. Delivering outcomes that matter.
           </p>
 
-          <div className="opacity-0 translate-y-6 blur-sm transition-all duration-700 pt-4" data-reveal-item style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}>
-            <a
-              href="#contact"
-              className="inline-flex rounded-lg px-6 py-3 text-sm font-semibold transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-offset-0"
-              style={{
-                background: `linear-gradient(180deg, ${PRIMARY} 0%, ${PRIMARY_DARK} 100%)`,
-                color: "#ffffff",
-                boxShadow: "0 10px 28px rgba(20,127,202,0.35)",
-              }}
-            >
+          <div className="opacity-0 translate-y-6 blur-sm transition-all duration-700 pt-6" data-reveal-item style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}>
+            <Button href="#contact">
               Let&apos;s talk →
-            </a>
+            </Button>
           </div>
         </div>
       </div>
@@ -322,7 +323,7 @@ function OurValue() {
           {pillars.map((p) => (
             <div
               key={p.title}
-              className="rounded-xl p-6 border opacity-0 translate-y-6 blur-sm transition-all duration-700 hover:bg-white/[0.04]"
+              className="rounded-xl p-7 border opacity-0 translate-y-6 blur-sm transition-all duration-700 hover:bg-white/[0.04]"
               data-reveal-item
               style={{ borderColor: BORDER, backgroundColor: "rgba(255,255,255,0.015)" }}
             >
@@ -418,13 +419,82 @@ function Why() {
         </p>
         <blockquote className="opacity-0 translate-y-6 blur-sm transition-all duration-700 border-l-2 pl-8 py-4 text-left italic" data-reveal-item style={{ borderColor: KAVELA_TEAL }}>
           <p className="text-lg md:text-xl leading-relaxed text-white/90">
-            “We bring clarity where there is complexity, momentum where there is inertia, and results where others stop at strategy.”
+            "We bring clarity where there is complexity, momentum where there is inertia, and results where others stop at strategy."
           </p>
         </blockquote>
       </div>
     </Section>
   );
 }
+
+/* --- FINAL CTA (Kavela) --- */
+function FinalCTA() {
+  return (
+    <section
+      id="final-cta"
+      className="relative py-28 md:py-36 text-center overflow-hidden"
+      style={{ backgroundColor: BG, color: TEXT }}
+    >
+      {/* halo teal subtil */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background: `
+            radial-gradient(60rem 30rem at 50% 0%, ${KAVELA_TEAL}14, transparent 60%),
+            radial-gradient(40rem 20rem at 50% 110%, ${KAVELA_TEAL}10, transparent 70%)
+          `,
+          filter: "blur(28px)",
+        }}
+      />
+
+      <div className="mx-auto max-w-4xl px-6 md:px-8" data-reveal>
+        <h2
+          className="opacity-0 translate-y-6 blur-sm transition-all duration-700
+                     text-4xl md:text-6xl font-light tracking-tight leading-tight"
+          data-reveal-item
+          style={{ fontFamily: HEAD, transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}
+        >
+          From intent to impact.
+          <br className="hidden md:block" />
+          Ready when you are.
+        </h2>
+
+        <p
+          className="opacity-0 translate-y-6 blur-sm transition-all duration-700
+                     mt-6 text-white/75 text-lg md:text-2xl"
+          data-reveal-item
+          style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}
+        >
+          Confidential. Focused. Outcome-driven.
+        </p>
+
+        {/* CTA pilule */}
+        <div
+          className="opacity-0 translate-y-6 blur-sm transition-all duration-700 mt-10"
+          data-reveal-item
+          style={{ transitionTimingFunction: "cubic-bezier(.22,1,.36,1)" }}
+        >
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full px-7 md:px-9 py-3 md:py-4 
+                       text-base md:text-lg font-medium shadow-lg transition
+                       hover:scale-[1.02] active:scale-[0.99]"
+            style={{
+              background:
+                "linear-gradient(180deg, #3ED4C9 0%, #1FA6A0 100%)",
+              color: "#001313",
+              boxShadow:
+                "0 10px 30px rgba(62, 212, 201, 0.22), 0 0 0 1px rgba(255,255,255,0.06) inset",
+            }}
+          >
+            Let’s talk →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 /* CONTACT */
 function Contact() {
@@ -490,12 +560,12 @@ export default function App() {
     >
       <Nav />
       <Hero />
-      {/* Why first after hero */}
       <Why />
       <About />
       <OurValue />
       <Approach />
       <Industries />
+      <FinalCTA />   {/* ← ici */}
       <Contact />
     </div>
   );
