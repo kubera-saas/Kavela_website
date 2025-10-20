@@ -254,7 +254,7 @@ function Hero() {
   );
 }
 
-/* ABOUT */
+/* ABOUT US */
 function About() {
   return (
     <Section id="about">
