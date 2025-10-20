@@ -167,7 +167,7 @@ function Nav() {
         <ul className="hidden lg:flex items-center gap-12 text-base md:text-lg uppercase tracking-wide">
           {[
             { label: "Why Kavela", href: "#why" },
-            { label: "About", href: "#about" },
+            { label: "About us", href: "#about" },
             { label: "Our Value", href: "#value" },
             { label: "Approach", href: "#approach" },
             { label: "Industries", href: "#industries" },
@@ -261,7 +261,7 @@ function About() {
       <div data-reveal className="grid gap-16 md:grid-cols-2 md:gap-12 items-start">
         <div className="opacity-0 translate-y-6 blur-sm transition-all duration-700" data-reveal-item>
           <h2 className="text-4xl md:text-5xl font-light uppercase tracking-tight mb-8" style={{ fontFamily: HEAD }}>
-            About
+            ABOUT US
           </h2>
           <div className="space-y-6 text-base leading-relaxed text-white/76">
             <p>
