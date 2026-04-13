@@ -24,14 +24,14 @@ export const MAX_W    = "1280px";
 /* ─── IMAGES ─── */
 const U = (id, w = 1920) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 export const IMG = {
-  heroHome:  U("photo-1525625293386-3f8f99389edd"),
-  corporate: U("photo-1486406146926-c627a92ad1ab"),
-  funds:     U("photo-1462899006636-339e08d1844e"),
-  platform:  U("photo-1518509562904-e7ef99cdcc86"),
-  asia1:     U("photo-1480796927426-f609979314bd"),
-  asia2:     U("photo-1506973035872-a4ec16b8e8d9"),
-  asia3:     U("photo-1544735716-392fe2489ffa"),
-  asia4:     U("photo-1554469384-e58fac16e23a"),
+  heroHome:  U("photo-1525625293386-3f8f99389edd"),          // Singapore skyline MBS dusk
+  corporate: U("photo-1444723121867-7a241cacace9"),          // Singapore skyline night wide
+  funds:     U("photo-1508964942454-1a56651d54ac"),          // Singapore MBS night
+  platform:  U("photo-1517309230475-6736d926b979"),          // Hong Kong night
+  asia1:     U("photo-1540959733332-eab4deabeeaf"),          // Tokyo tower wide
+  asia2:     U("photo-1596422846543-75c6fc197f07"),          // Singapore CBD
+  asia3:     U("photo-1536098561742-ca998e48cbcc"),          // Tokyo street neon
+  asia4:     U("photo-1570168007204-dfb528c6958f"),          // Mumbai Gateway of India
 };
 
 /* ─── GLOBAL STYLES ─── */
@@ -233,6 +233,7 @@ export function Nav() {
   const shadow = solid ? "0 1px 0 rgba(0,0,0,0.06)" : "none";
 
   const links = [
+    ["Home", "/"],
     ["Corporate", "/corporate"],
     ["Funds", "/funds"],
     ["Platform", "/platform"],
@@ -345,7 +346,7 @@ export function Footer() {
               style={{ height: "40px", width: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem", opacity: 0.8 }}
             />
             <p style={{ fontSize: "0.92rem", lineHeight: 1.75, color: "rgba(255,255,255,0.35)", maxWidth: "300px" }}>
-              Connecting companies and funds to the right people in Asia.
+              Connecting corporates, investment funds, and family offices to the right people in Asia.
             </p>
           </div>
 

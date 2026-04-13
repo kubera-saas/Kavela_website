@@ -9,9 +9,9 @@ export default function FundsPage() {
     <RevealEngine>
 
       <PageHero
-        label="For Investment Funds"
-        title="Your LPs want Asia<br/>exposure. <strong style='font-weight:600'>We make<br/>it happen.</strong>"
-        subtitle="Fund setup, portfolio expansion, and deal flow — through people who actually know the local ecosystems, not research teams working from a distance."
+        label="For Funds & Family Offices"
+        title="Asia exposure starts with<br/><strong style='font-weight:600'>the right connections.</strong>"
+        subtitle="Operational support on the ground, portfolio expansion, and deal flow — through people who know the local ecosystems firsthand."
         image={IMG.funds}
       >
         <Btn to="/contact" variant="white">Let's meet →</Btn>
@@ -24,31 +24,32 @@ export default function FundsPage() {
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start",
           }}>
             <div>
-              <Label>Fund entry</Label>
+              <Label>Entering Asia</Label>
               <h2 style={{
                 fontFamily: HEAD, fontWeight: 200, color: TEXT_D,
                 fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.15,
                 letterSpacing: "-0.025em", marginBottom: "1.5rem",
               }}>
-                Setting up in Asia<br />
-                <strong style={{ fontWeight: 600 }}>is the easy part.</strong>
+                Deploying in Asia<br />
+                <strong style={{ fontWeight: 600 }}>requires local trust.</strong>
               </h2>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.25rem" }}>
-                The hard part is knowing who to trust, where to deploy, and how to access
-                deal flow that doesn't come through a Bloomberg terminal.
+                Knowing who to work with, where to deploy, and how to access
+                deal flow that doesn't come through a terminal — that's what
+                takes years to build.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
-                We've spent years building relationships with the founders, LPs,
-                co-investors, and operators who define each market.
-                We plug you into that network from day one.
+                We've built those relationships — with founders, LPs,
+                co-investors, and operators across the region.
+                Funds and family offices tap into that network from day one.
               </p>
             </div>
 
             <div>
               {[
-                { title: "Market positioning", desc: "Where to set up, how to position your thesis, and who you need to know — specific to your fund's mandate." },
-                { title: "Ecosystem access", desc: "Direct introductions to LPs, co-investors, founders, and corporate partners. Not a database — a network." },
-                { title: "Operational setup", desc: "Local infrastructure, regulatory navigation, and the practical groundwork that turns a plan into a presence." },
+                { title: "Market positioning", desc: "Where to deploy, how to position your thesis, and who you need to know — tailored to your fund or family office mandate." },
+                { title: "Ecosystem access", desc: "Direct introductions to LPs, co-investors, founders, and corporate partners. A network, not a database." },
+                { title: "Operational support", desc: "On-the-ground guidance — from local infrastructure to regulatory navigation — to help turn your Asia strategy into a working presence." },
               ].map((item, i) => (
                 <div key={item.title} data-r style={{
                   padding: "2rem 0",
@@ -132,9 +133,9 @@ export default function FundsPage() {
               fontSize: "clamp(1.3rem, 2.8vw, 1.8rem)",
               lineHeight: 1.55, letterSpacing: "-0.01em",
             }}>
-              "We already work daily with growth-stage companies expanding in Asia
-              — businesses that look like SMEs, but operate under investor-grade
-              expectations. That's exactly the standard we hold."
+              "We work daily with growth-stage companies expanding in Asia
+              — businesses backed by funds and family offices, operating under
+              investor-grade expectations. That experience shapes everything we do."
             </p>
           </div>
         </Wrap>

@@ -1,9 +1,90 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  BLUE, BLUE_D, BLUE_L, NAVY, WHITE, OFF_W, GRAY, GRAY_L, TEXT_D,
+  BLUE, BLUE_D, NAVY, WHITE, OFF_W, GRAY, GRAY_L, TEXT_D,
   HEAD, BODY, IMG,
   RevealEngine, Wrap, Btn, Label, ImageBreak,
 } from "../components/shared";
+
+/* ─── Hover card with sub-themes ─── */
+function PathCard({ to, image, label, title, subtitle, themes, side = "left" }) {
+  const [hovered, setHovered] = useState(false);
+  const imgSide = (
+    <div style={{ position: "relative", overflow: "hidden", minHeight: "340px" }}>
+      <div style={{
+        position: "absolute", inset: 0,
+        backgroundImage: `url('${image}')`,
+        backgroundSize: "cover", backgroundPosition: "center",
+        transition: "transform 0.6s ease",
+        transform: hovered ? "scale(1.04)" : "scale(1)",
+      }} />
+      <div style={{
+        position: "absolute", inset: 0,
+        background: `linear-gradient(135deg, ${BLUE}50 0%, ${NAVY}60 100%)`,
+      }} />
+    </div>
+  );
+  const textSide = (
+    <div style={{
+      padding: "3.5rem", backgroundColor: NAVY, color: WHITE,
+      display: "flex", flexDirection: "column", justifyContent: "center",
+    }}>
+      <Label light>{label}</Label>
+      <h2 style={{
+        fontFamily: HEAD, fontWeight: 300, color: WHITE,
+        fontSize: "clamp(1.6rem, 2.8vw, 2.2rem)", lineHeight: 1.2,
+        letterSpacing: "-0.02em", marginBottom: "1rem",
+      }}
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
+      <p style={{
+        fontSize: "0.92rem", lineHeight: 1.7, color: "rgba(255,255,255,0.4)",
+        marginBottom: "1.5rem", maxWidth: "380px",
+      }}>{subtitle}</p>
+
+      {/* Sub-themes on hover */}
+      <div style={{
+        overflow: "hidden",
+        maxHeight: hovered ? "200px" : "0",
+        opacity: hovered ? 1 : 0,
+        transition: "max-height 0.4s ease, opacity 0.3s ease",
+        marginBottom: hovered ? "1.5rem" : "0",
+      }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+          {themes.map((t) => (
+            <span key={t} style={{
+              fontSize: "0.72rem", padding: "6px 14px", borderRadius: "100px",
+              border: "1px solid rgba(255,255,255,0.15)",
+              color: "rgba(255,255,255,0.6)", fontFamily: HEAD, fontWeight: 500,
+              letterSpacing: "0.03em",
+            }}>{t}</span>
+          ))}
+        </div>
+      </div>
+
+      <span style={{ fontSize: "0.88rem", fontWeight: 600, color: WHITE, fontFamily: HEAD }}>
+        Learn more →
+      </span>
+    </div>
+  );
+
+  return (
+    <Link to={to} data-r style={{
+      display: "grid", gridTemplateColumns: "1fr 1fr",
+      borderRadius: "16px", overflow: "hidden",
+      textDecoration: "none", cursor: "pointer",
+      transition: "transform 0.4s ease, box-shadow 0.4s ease",
+      transform: hovered ? "translateY(-3px)" : "translateY(0)",
+      boxShadow: hovered ? "0 20px 60px rgba(10,22,40,0.15)" : "none",
+    }}
+      className="g2"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {side === "left" ? <>{imgSide}{textSide}</> : <>{textSide}{imgSide}</>}
+    </Link>
+  );
+}
 
 export default function Home() {
   return (
@@ -39,11 +120,11 @@ export default function Home() {
 
             <p style={{
               fontSize: "clamp(1rem, 1.5vw, 1.2rem)", lineHeight: 1.75,
-              color: "rgba(255,255,255,0.5)", maxWidth: "440px",
+              color: "rgba(255,255,255,0.5)", maxWidth: "480px",
               marginBottom: "3rem", fontFamily: BODY, fontWeight: 300,
             }}>
-              We connect investment funds and corporates to the right people,
-              in the right markets, at the right time.
+              We help investment funds, family offices, and corporates
+              access the right people and the right opportunities across Asia.
             </p>
 
             <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", alignItems: "center" }}>
@@ -64,162 +145,77 @@ export default function Home() {
               letterSpacing: "-0.01em",
             }}>
               Kavela is a <strong style={{ fontWeight: 600, color: BLUE }}>network-driven platform</strong>.
-              We don't write reports. We open doors — connecting you to investors,
+              We connect corporates, funds, and family offices to the investors,
               distributors, and operators who make Asia happen.
             </p>
           </div>
         </Wrap>
       </section>
 
-      {/* ════════════ TWO PATHS — CINEMATIC ════════════ */}
+      {/* ════════════ TWO PATHS — HOVER SUB-THEMES ════════════ */}
       <section style={{ backgroundColor: WHITE, paddingBottom: "1.5rem" }}>
-        <Wrap>
-          {/* Corporate */}
-          <Link to="/corporate" data-r style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr",
-            minHeight: "500px", borderRadius: "16px", overflow: "hidden",
-            marginBottom: "1.5rem", textDecoration: "none",
-            transition: "transform 0.4s ease, box-shadow 0.4s ease",
-          }}
-            className="g2"
-            onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 20px 60px rgba(10,22,40,0.15)"; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
-          >
-            <div style={{
-              position: "relative", overflow: "hidden",
-            }}>
-              <div style={{
-                position: "absolute", inset: 0,
-                backgroundImage: `url('${IMG.corporate}')`,
-                backgroundSize: "cover", backgroundPosition: "center",
-                transition: "transform 0.6s ease",
-              }}
-                className="card-img"
-              />
-              <div style={{
-                position: "absolute", inset: 0,
-                background: `linear-gradient(135deg, ${BLUE}60 0%, ${NAVY}40 100%)`,
-              }} />
-            </div>
-            <div style={{
-              padding: "4rem 3.5rem",
-              backgroundColor: NAVY, color: WHITE,
-              display: "flex", flexDirection: "column", justifyContent: "center",
-            }}>
-              <Label light>For Corporates</Label>
-              <h2 style={{
-                fontFamily: HEAD, fontWeight: 300, color: WHITE,
-                fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.15,
-                letterSpacing: "-0.02em", marginBottom: "1.25rem",
-              }}>
-                You know the market is there.<br />
-                <strong style={{ fontWeight: 600 }}>We know the people.</strong>
-              </h2>
-              <p style={{
-                fontSize: "0.95rem", lineHeight: 1.7, color: "rgba(255,255,255,0.45)",
-                marginBottom: "2rem", maxWidth: "380px",
-              }}>
-                Market entry, distribution partnerships, and deal execution
-                across Southeast Asia, India, and China.
-              </p>
-              <span style={{ fontSize: "0.88rem", fontWeight: 600, color: WHITE, fontFamily: HEAD }}>
-                Learn more →
-              </span>
-            </div>
-          </Link>
+        <Wrap style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
 
-          {/* Funds */}
-          <Link to="/funds" data-r style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr",
-            minHeight: "500px", borderRadius: "16px", overflow: "hidden",
-            textDecoration: "none",
-            transition: "transform 0.4s ease, box-shadow 0.4s ease",
-          }}
-            className="g2"
-            onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 20px 60px rgba(10,22,40,0.15)"; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
-          >
-            <div style={{
-              padding: "4rem 3.5rem",
-              backgroundColor: BLUE, color: WHITE,
-              display: "flex", flexDirection: "column", justifyContent: "center",
-              order: 1,
-            }}>
-              <Label light>For Investment Funds</Label>
-              <h2 style={{
-                fontFamily: HEAD, fontWeight: 300, color: WHITE,
-                fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.15,
-                letterSpacing: "-0.02em", marginBottom: "1.25rem",
-              }}>
-                Your LPs want Asia exposure.<br />
-                <strong style={{ fontWeight: 600 }}>We make it happen.</strong>
-              </h2>
-              <p style={{
-                fontSize: "0.95rem", lineHeight: 1.7, color: "rgba(255,255,255,0.45)",
-                marginBottom: "2rem", maxWidth: "380px",
-              }}>
-                Fund setup, portfolio company expansion, and deal flow
-                through curated local networks.
-              </p>
-              <span style={{ fontSize: "0.88rem", fontWeight: 600, color: WHITE, fontFamily: HEAD }}>
-                Learn more →
-              </span>
-            </div>
-            <div style={{
-              position: "relative", overflow: "hidden", order: 2,
-            }}>
-              <div style={{
-                position: "absolute", inset: 0,
-                backgroundImage: `url('${IMG.funds}')`,
-                backgroundSize: "cover", backgroundPosition: "center",
-              }} />
-              <div style={{
-                position: "absolute", inset: 0,
-                background: `linear-gradient(135deg, ${NAVY}50 0%, ${BLUE}30 100%)`,
-              }} />
-            </div>
-          </Link>
+          <PathCard
+            to="/corporate"
+            image={IMG.corporate}
+            label="For Corporates"
+            title="You've identified the market.<br/><strong style='font-weight:600'>We know the people.</strong>"
+            subtitle="Market entry, distribution partnerships, and deal execution across Southeast Asia, India, and China."
+            themes={["Market entry", "High-value introductions", "Distribution partnerships", "Deal execution"]}
+            side="left"
+          />
+
+          <PathCard
+            to="/funds"
+            image={IMG.funds}
+            label="For Funds & Family Offices"
+            title="Asia exposure starts with<br/><strong style='font-weight:600'>the right connections.</strong>"
+            subtitle="Operational support, portfolio expansion, and deal flow through curated local networks."
+            themes={["Operational support", "Portfolio expansion", "Deal flow", "LP & co-investor access"]}
+            side="right"
+          />
+
         </Wrap>
       </section>
 
       {/* ════════════ IMAGE BREAK ════════════ */}
       <ImageBreak image={IMG.asia3} height="45vh" />
 
-      {/* ════════════ DIFFERENTIATOR ════════════ */}
+      {/* ════════════ WHAT WE BRING ════════════ */}
       <section style={{ padding: "8rem 0", backgroundColor: WHITE }}>
         <Wrap>
           <div data-r className="g2" style={{
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start",
           }}>
             <div>
-              <Label>Why Kavela</Label>
+              <Label>What we bring</Label>
               <h2 style={{
                 fontFamily: HEAD, fontWeight: 200, color: TEXT_D,
                 fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.15,
                 letterSpacing: "-0.025em",
               }}>
-                Others consult.<br />
-                <strong style={{ fontWeight: 600, color: BLUE }}>We connect.</strong>
+                Access, speed,<br />and <strong style={{ fontWeight: 600, color: BLUE }}>follow-through.</strong>
               </h2>
             </div>
             <div style={{ paddingTop: "0.5rem" }}>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: GRAY, fontFamily: BODY, marginBottom: "1.5rem" }}>
-                Most firms spend months on strategy decks. We spend that time
-                introducing you to the distributor who will carry your product,
-                the LP who will back your fund, or the operator who will run your
-                local office.
+                Most expansion journeys stall — not because the strategy is wrong,
+                but because the right introductions never happen. We focus
+                on making sure they do: the right distributor, the right LP,
+                the right operator — matched to your exact needs.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: GRAY, fontFamily: BODY }}>
-                That's not consulting. That's access.
+                And we stay involved until the relationship is working.
               </p>
             </div>
           </div>
 
           <div data-rs style={{ marginTop: "5rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0" }} className="g3">
             {[
-              { n: "Access", d: "Curated network of investors, distributors, and operators across 4 Asian markets." },
-              { n: "Speed", d: "First introductions in weeks. Not a 6-month scoping phase followed by a report." },
-              { n: "Execution", d: "We stay involved until the deal closes. Introductions without follow-through are worthless." },
+              { n: "Access", d: "A curated network of investors, distributors, and operators across Singapore, ASEAN, India, and China." },
+              { n: "Speed", d: "First introductions in weeks. We move at the pace of opportunity, not at the pace of a consulting engagement." },
+              { n: "Follow-through", d: "We stay in the room until the deal is done. An introduction without execution is just a handshake." },
             ].map((item, i) => (
               <div key={item.n} data-rc style={{
                 padding: "3rem 2.5rem",
@@ -269,9 +265,8 @@ export default function Home() {
                 fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(255,255,255,0.4)",
                 marginBottom: "2.5rem",
               }}>
-                The companies and funds that enter now — with the right local partners —
-                will define the next decade. The ones that wait will spend the decade
-                catching up.
+                The funds and corporates entering now — with the right local partners —
+                will define the next decade. Local access is the differentiator.
               </p>
               <Btn to="/why-asia" variant="outline">Explore why →</Btn>
             </div>
@@ -279,10 +274,10 @@ export default function Home() {
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem",
             }}>
               {[
-                { n: "Singapore", d: "Asia's financial capital. Where every serious fund sets up." },
-                { n: "Southeast Asia", d: "600M consumers. Digital-first. Under-penetrated." },
-                { n: "India", d: "Scale meets ambition. The startup ecosystem the world is watching." },
-                { n: "China", d: "Complex. Essential. Impossible to navigate alone." },
+                { n: "Singapore", d: "Asia's financial capital. Where every serious player sets up." },
+                { n: "Southeast Asia", d: "Digital-first economies. Under-penetrated. Rewarding first movers." },
+                { n: "India", d: "Scale meets ambition. The ecosystem the world is watching." },
+                { n: "China", d: "Complex. Essential. Requires trusted local intermediaries." },
               ].map((m) => (
                 <div key={m.n} data-rc style={{
                   padding: "1.75rem", borderRadius: "12px",
@@ -314,7 +309,7 @@ export default function Home() {
               fontSize: "1.1rem", lineHeight: 1.7, color: GRAY, fontFamily: BODY,
               maxWidth: "420px", margin: "0 auto 3rem",
             }}>
-              You tell us where you want to go.<br />
+              Tell us where you want to go.<br />
               We'll tell you who you need to meet.
             </p>
             <Btn to="/contact">Get in touch →</Btn>

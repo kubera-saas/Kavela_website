@@ -11,7 +11,7 @@ export default function CorporatePage() {
       <PageHero
         label="For Corporates"
         title="You know the market<br/>is there. <strong style='font-weight:600'>We know<br/>the people.</strong>"
-        subtitle="Asia isn't one market. It's dozens — each with its own rules, players, and timing. We give you direct access to the people who matter in each one."
+        subtitle="Asia isn't one market. It's dozens — each with its own rules, players, and timing. We provide direct access to the partners, distributors, and decision-makers who matter in each one."
         image={IMG.corporate}
       >
         <Btn to="/contact" variant="white">Let's meet →</Btn>
@@ -30,13 +30,14 @@ export default function CorporatePage() {
               Most companies enter Asia <strong style={{ fontWeight: 600 }}>too slowly.</strong>
             </h2>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.25rem" }}>
-              They hire a consulting firm. Six months later, they have a market entry report.
-              Twelve months later, they're still looking for a local partner.
-              By then, the window has moved.
+              They invest in lengthy scoping phases, hire advisory firms, and wait
+              for a market entry report. By the time the report arrives,
+              the competitive window has moved.
             </p>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
-              We don't write market entry reports. We introduce you to the distributor
-              who will carry your product next quarter.
+              Our approach is different: direct introductions to the distributor
+              who will carry your product, the partner who will co-develop your
+              offering — delivered in weeks, not quarters.
             </p>
           </div>
         </Wrap>
@@ -107,8 +108,9 @@ export default function CorporatePage() {
                 fontSize: "clamp(1.3rem, 2.8vw, 1.8rem)",
                 lineHeight: 1.55, letterSpacing: "-0.01em",
               }}>
-                "A good introduction is worth more than a great strategy deck.
-                We've built our entire model around that belief."
+                "In our experience, the right introduction at the right time
+                creates more value than months of market research.
+                That's the principle behind everything we do."
               </p>
             </blockquote>
           </div>

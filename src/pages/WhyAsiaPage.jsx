@@ -11,7 +11,7 @@ export default function WhyAsiaPage() {
       <PageHero
         label="Why Asia"
         title="The gravity of global<br/>business is <strong style='font-weight:600'>shifting east.</strong>"
-        subtitle="This isn't a trend piece. It's the operating reality for every serious fund and corporate with a 10-year horizon."
+        subtitle="This isn't a trend piece. It's the operating reality for every serious fund, family office, and corporate with a 10-year horizon."
         image={IMG.asia2}
       >
         <Btn to="/contact" variant="white">Explore with us →</Btn>
@@ -199,8 +199,8 @@ export default function WhyAsiaPage() {
               fontSize: "clamp(1.3rem, 2.8vw, 1.8rem)",
               lineHeight: 1.55, letterSpacing: "-0.01em",
             }}>
-              "The companies that enter Asia now — with the right local partners —
-              will define the next decade. The ones that wait will spend the decade catching up."
+              "The funds, family offices, and corporates that establish the right local
+              partnerships now will be best positioned for the decade ahead."
             </p>
           </div>
         </Wrap>

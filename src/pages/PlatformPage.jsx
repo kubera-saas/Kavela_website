@@ -11,7 +11,7 @@ export default function PlatformPage() {
       <PageHero
         label="How it works"
         title="Not a consulting firm.<br/><strong style='font-weight:600'>A platform.</strong>"
-        subtitle="We don't sell advice. We activate a network. The difference is that our work ends with a signed deal, not a slide deck."
+        subtitle="We activate a network built over years of operating in Asia. For corporates, funds, and family offices looking to move with precision."
         image={IMG.platform}
       >
         <Btn to="/contact" variant="white">Get started →</Btn>
@@ -145,13 +145,13 @@ export default function PlatformPage() {
               <p style={{
                 fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.18em",
                 color: GRAY, fontWeight: 600, fontFamily: HEAD, marginBottom: "2rem",
-              }}>Traditional consulting</p>
+              }}>Traditional approach</p>
               {[
-                "6-month scoping phase",
+                "Multi-month scoping phase",
                 "Strategy deck with recommendations",
-                "Generic market research",
+                "Market research from a distance",
                 "Hand-off after delivery",
-                "Billed by the hour",
+                "Engagement measured in time spent",
               ].map((t) => (
                 <div key={t} style={{
                   display: "flex", alignItems: "center", gap: "0.85rem",
@@ -173,10 +173,10 @@ export default function PlatformPage() {
               }}>Kavela</p>
               {[
                 "First introductions in weeks",
-                "Connections, not slide decks",
-                "Local knowledge from real relationships",
-                "We stay until the deal closes",
-                "Aligned to outcomes",
+                "Connections grounded in real relationships",
+                "Local knowledge from years on the ground",
+                "Involvement through to execution",
+                "Aligned to outcomes, not hours",
               ].map((t) => (
                 <div key={t} style={{
                   display: "flex", alignItems: "center", gap: "0.85rem",

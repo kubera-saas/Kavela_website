@@ -58,8 +58,8 @@ export default function ContactPage() {
                 fontFamily: HEAD, fontWeight: 300, color: TEXT_D,
                 fontSize: "1.6rem", lineHeight: 1.3, marginBottom: "1.5rem",
               }}>
-                Whether you're a fund exploring Asia or a corporate
-                looking for the right entry point — we'd like to hear from you.
+                Whether you're a fund, a family office, or a corporate
+                exploring the right entry point into Asia — we'd like to hear from you.
               </h2>
 
               {/* Email */}
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 }}>What we cover</p>
                 {[
                   "Corporate market entry & partnerships",
-                  "Fund setup & portfolio expansion in Asia",
+                  "Fund & family office expansion in Asia",
                   "Deal sourcing & execution",
                   "Network activation across 4 markets",
                 ].map((t) => (
