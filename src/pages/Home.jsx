@@ -10,7 +10,7 @@ import {
 function PathCard({ to, image, label, title, subtitle, themes, side = "left" }) {
   const [hovered, setHovered] = useState(false);
   const imgSide = (
-    <div style={{ position: "relative", overflow: "hidden", minHeight: "340px" }}>
+    <div className="kv-market-img" style={{ position: "relative", overflow: "hidden", minHeight: "340px" }}>
       <div style={{
         position: "absolute", inset: 0,
         backgroundImage: `url('${image}')`,
@@ -91,7 +91,7 @@ export default function Home() {
     <RevealEngine>
 
       {/* ════════════ HERO ════════════ */}
-      <section style={{
+      <section className="kv-hero" style={{
         position: "relative", minHeight: "100vh",
         display: "flex", alignItems: "flex-end",
         overflow: "hidden", backgroundColor: NAVY,
@@ -107,7 +107,7 @@ export default function Home() {
           background: `linear-gradient(180deg, ${NAVY}80 0%, ${NAVY}30 35%, ${NAVY}C0 75%, ${NAVY} 100%)`,
         }} />
 
-        <Wrap style={{ position: "relative", zIndex: 2, paddingBottom: "6rem", paddingTop: "14rem", width: "100%" }}>
+        <Wrap className="kv-hero-inner" style={{ position: "relative", zIndex: 2, paddingBottom: "6rem", paddingTop: "14rem", width: "100%" }}>
           <div data-r>
             <h1 style={{
               fontFamily: HEAD, fontWeight: 200, color: WHITE,
@@ -127,7 +127,7 @@ export default function Home() {
               find the right partners and opportunities in Southeast Asia.
             </p>
 
-            <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", alignItems: "center" }}>
+            <div className="kv-hero-btns" style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", alignItems: "center" }}>
               <Btn to="/contact" variant="white">Let's meet →</Btn>
               <Btn to="/platform" variant="ghost" style={{ opacity: 0.5 }}>How it works</Btn>
             </div>

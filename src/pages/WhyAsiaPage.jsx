@@ -79,7 +79,7 @@ export default function WhyAsiaPage() {
               borderRadius: "16px", overflow: "hidden",
               border: `1px solid ${GRAY_L}`, backgroundColor: WHITE,
             }}>
-              <div style={{ position: "relative", minHeight: "320px" }}>
+              <div className="kv-market-img" style={{ position: "relative", minHeight: "320px" }}>
                 <div style={{
                   position: "absolute", inset: 0,
                   backgroundImage: `url('${IMG.heroHome}')`,
@@ -119,7 +119,7 @@ export default function WhyAsiaPage() {
                   the distributor who controls that vertical.
                 </p>
               </div>
-              <div style={{ position: "relative", minHeight: "320px" }}>
+              <div className="kv-market-img" style={{ position: "relative", minHeight: "320px" }}>
                 <div style={{
                   position: "absolute", inset: 0,
                   backgroundImage: `url('${IMG.asia3}')`,
@@ -135,7 +135,7 @@ export default function WhyAsiaPage() {
               borderRadius: "16px", overflow: "hidden",
               border: `1px solid ${GRAY_L}`, backgroundColor: WHITE,
             }}>
-              <div style={{ position: "relative", minHeight: "320px" }}>
+              <div className="kv-market-img" style={{ position: "relative", minHeight: "320px" }}>
                 <div style={{
                   position: "absolute", inset: 0,
                   backgroundImage: `url('${IMG.asia4}')`,
@@ -177,7 +177,7 @@ export default function WhyAsiaPage() {
                   selective introductions when the opportunity is right.
                 </p>
               </div>
-              <div style={{ position: "relative", minHeight: "320px" }}>
+              <div className="kv-market-img" style={{ position: "relative", minHeight: "320px" }}>
                 <div style={{
                   position: "absolute", inset: 0,
                   backgroundImage: `url('${IMG.asia1}')`,
@@ -192,7 +192,7 @@ export default function WhyAsiaPage() {
       </section>
 
       {/* ── TIMING ── */}
-      <section style={{ padding: "7rem 0", backgroundColor: WHITE }}>
+      <section className="kv-quote" style={{ padding: "7rem 0", backgroundColor: WHITE }}>
         <Wrap>
           <div data-r style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
             <p style={{

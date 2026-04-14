@@ -75,6 +75,69 @@ export function GlobalStyles() {
       @media(max-width:520px) {
         .g4 { grid-template-columns: 1fr !important; }
       }
+
+      /* ─── MOBILE (tablet) ─── */
+      @media(max-width:768px) {
+        /* Sections: reduce vertical padding */
+        section { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+
+        /* Hero */
+        .kv-hero { min-height: 70vh !important; }
+        .kv-hero-inner { padding-top: 8rem !important; padding-bottom: 4rem !important; }
+        .kv-hero h1, .kv-page-hero h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
+
+        /* Grids: reduce gaps on mobile */
+        .g2, .g3 { gap: 2rem !important; }
+
+        /* Stacked cards: swap border-left for border-top */
+        .g3 > [data-rc] {
+          border-left: none !important;
+          border-right: none !important;
+          padding: 2.5rem 1.5rem !important;
+        }
+
+        /* Market cards: reduce image panel height */
+        .kv-market-img { min-height: 220px !important; }
+
+        /* Parallax: disable on mobile/iOS */
+        .kv-parallax { background-attachment: scroll !important; }
+
+        /* Nav: smaller logo */
+        .kv-nav { height: 72px !important; }
+        .kv-nav-logo { height: 80px !important; }
+
+        /* Footer */
+        footer { padding-top: 3rem !important; }
+        .kv-footer-grid { gap: 2.5rem !important; padding-bottom: 3rem !important; }
+        .kv-footer-logo { height: 50px !important; }
+
+        /* Comparison cards */
+        .kv-compare { gap: 1.25rem !important; }
+
+        /* Quote sections */
+        .kv-quote { padding: 4rem 0 !important; }
+        .kv-quote p { font-size: clamp(1.1rem, 4vw, 1.5rem) !important; }
+
+        /* CTA sections */
+        .kv-cta h2 { font-size: clamp(1.8rem, 6vw, 2.5rem) !important; }
+      }
+
+      /* ─── MOBILE (phone) ─── */
+      @media(max-width:480px) {
+        section { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+        .kv-hero { min-height: 60vh !important; }
+        .kv-hero-inner { padding-top: 7rem !important; padding-bottom: 3rem !important; }
+
+        .kv-nav { height: 64px !important; }
+        .kv-nav-logo { height: 65px !important; }
+
+        .kv-footer-grid { gap: 2rem !important; }
+        .kv-footer-logo { height: 40px !important; }
+
+        /* Buttons stack full width */
+        .kv-hero-btns { flex-direction: column !important; }
+        .kv-hero-btns a { width: 100% !important; justify-content: center !important; text-align: center !important; }
+      }
     `}</style>
   );
 }
@@ -113,8 +176,8 @@ export function ScrollTop() {
 }
 
 /* ─── PRIMITIVES ─── */
-export const Wrap = ({ children, style: s = {} }) => (
-  <div style={{ maxWidth: MAX_W, margin: "0 auto", padding: "0 clamp(1.5rem, 4vw, 3.5rem)", ...s }}>{children}</div>
+export const Wrap = ({ children, style: s = {}, className }) => (
+  <div className={className} style={{ maxWidth: MAX_W, margin: "0 auto", padding: "0 clamp(1.5rem, 4vw, 3.5rem)", ...s }}>{children}</div>
 );
 
 export const Btn = ({ children, href, to, variant = "primary", style: s = {} }) => {
@@ -154,7 +217,7 @@ export function ImageBreak({ image, height = "50vh", overlay = true }) {
     <div style={{
       position: "relative", height, overflow: "hidden",
     }}>
-      <div style={{
+      <div className="kv-parallax" style={{
         position: "absolute", inset: 0,
         backgroundImage: `url('${image}')`,
         backgroundSize: "cover", backgroundPosition: "center",
@@ -171,7 +234,7 @@ export function ImageBreak({ image, height = "50vh", overlay = true }) {
 /* ─── PAGE HERO ─── */
 export function PageHero({ label, title, subtitle, image, children }) {
   return (
-    <section style={{
+    <section className="kv-hero kv-page-hero" style={{
       position: "relative", minHeight: "80vh",
       display: "flex", alignItems: "flex-end",
       overflow: "hidden", backgroundColor: NAVY,
@@ -187,7 +250,7 @@ export function PageHero({ label, title, subtitle, image, children }) {
         background: `linear-gradient(180deg, ${NAVY}90 0%, ${NAVY}40 40%, ${NAVY}D0 100%)`,
       }} />
 
-      <Wrap style={{ position: "relative", zIndex: 2, paddingBottom: "5rem", paddingTop: "12rem", width: "100%" }}>
+      <Wrap className="kv-hero-inner" style={{ position: "relative", zIndex: 2, paddingBottom: "5rem", paddingTop: "12rem", width: "100%" }}>
         <div data-r>
           {label && <Label light>{label}</Label>}
           <h1 style={{
@@ -250,13 +313,14 @@ export function Nav() {
       backdropFilter: solid ? "blur(12px)" : "none",
     }}>
       <Wrap>
-        <nav style={{
+        <nav className="kv-nav" style={{
           height: "96px", display: "flex", alignItems: "center", justifyContent: "space-between",
         }}>
           <Link to="/" style={{ display: "flex", alignItems: "center" }}>
             <img
               src={solid ? "/transparent-07.png" : "/LogoKavela.png"}
               alt="Kavela"
+              className="kv-nav-logo"
               style={{
                 height: "110px", width: "auto",
                 transition: "opacity 0.3s",
@@ -337,7 +401,7 @@ export function Footer() {
   return (
     <footer style={{ backgroundColor: NAVY, padding: "5.5rem 0 0" }}>
       <Wrap>
-        <div className="g4" style={{
+        <div className="g4 kv-footer-grid" style={{
           display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.2fr",
           gap: "4rem", paddingBottom: "4.5rem",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
@@ -345,6 +409,7 @@ export function Footer() {
         }}>
           <div>
             <img src="/LogoKavela.png" alt="Kavela"
+              className="kv-footer-logo"
               style={{ height: "70px", width: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem", opacity: 0.8 }}
             />
             <p style={{ fontSize: "0.92rem", lineHeight: 1.75, color: "rgba(255,255,255,0.35)", maxWidth: "300px" }}>
