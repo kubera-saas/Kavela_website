@@ -124,7 +124,7 @@ export default function Home() {
               marginBottom: "3rem", fontFamily: BODY, fontWeight: 300,
             }}>
               We help investment funds, family offices, and corporates
-              access the right people and the right opportunities across Asia.
+              find the right partners and opportunities in Southeast Asia.
             </p>
 
             <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", alignItems: "center" }}>
@@ -145,14 +145,14 @@ export default function Home() {
               letterSpacing: "-0.01em",
             }}>
               Kavela is a <strong style={{ fontWeight: 600, color: BLUE }}>network-driven platform</strong>.
-              We connect corporates, funds, and family offices to the investors,
-              distributors, and operators who make Asia happen.
+              We help corporates, funds, and family offices connect with
+              the right investors, distributors, and operators across Asia.
             </p>
           </div>
         </Wrap>
       </section>
 
-      {/* ════════════ TWO PATHS — HOVER SUB-THEMES ════════════ */}
+      {/* ════════════ TWO PATHS - HOVER SUB-THEMES ════════════ */}
       <section style={{ backgroundColor: WHITE, paddingBottom: "1.5rem" }}>
         <Wrap style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
 
@@ -160,8 +160,8 @@ export default function Home() {
             to="/corporate"
             image={IMG.corporate}
             label="For Corporates"
-            title="You've identified the market.<br/><strong style='font-weight:600'>We know the people.</strong>"
-            subtitle="Market entry, distribution partnerships, and deal execution across Southeast Asia, India, and China."
+            title="Expanding into Asia?<br/><strong style='font-weight:600'>We can help.</strong>"
+            subtitle="Market entry, distribution partnerships, and deal execution - with a focus on Singapore and Southeast Asia."
             themes={["Market entry", "High-value introductions", "Distribution partnerships", "Deal execution"]}
             side="left"
           />
@@ -170,8 +170,8 @@ export default function Home() {
             to="/funds"
             image={IMG.funds}
             label="For Funds & Family Offices"
-            title="Asia exposure starts with<br/><strong style='font-weight:600'>the right connections.</strong>"
-            subtitle="Operational support, portfolio expansion, and deal flow through curated local networks."
+            title="Looking for Asia exposure?<br/><strong style='font-weight:600'>Let's explore together.</strong>"
+            subtitle="Operational support, portfolio expansion, and deal flow through local networks we've built over the years."
             themes={["Operational support", "Portfolio expansion", "Deal flow", "LP & co-investor access"]}
             side="right"
           />
@@ -200,10 +200,10 @@ export default function Home() {
             </div>
             <div style={{ paddingTop: "0.5rem" }}>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: GRAY, fontFamily: BODY, marginBottom: "1.5rem" }}>
-                Most expansion journeys stall — not because the strategy is wrong,
-                but because the right introductions never happen. We focus
-                on making sure they do: the right distributor, the right LP,
-                the right operator — matched to your exact needs.
+                Many expansion journeys lose momentum - not because the strategy is wrong,
+                but because the right introductions don't happen soon enough. That's
+                where we focus: helping match the right distributor, LP,
+                or operator to your specific needs.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: GRAY, fontFamily: BODY }}>
                 And we stay involved until the relationship is working.
@@ -213,9 +213,9 @@ export default function Home() {
 
           <div data-rs style={{ marginTop: "5rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0" }} className="g3">
             {[
-              { n: "Access", d: "A curated network of investors, distributors, and operators across Singapore, ASEAN, India, and China." },
-              { n: "Speed", d: "First introductions in weeks. We move at the pace of opportunity, not at the pace of a consulting engagement." },
-              { n: "Follow-through", d: "We stay in the room until the deal is done. An introduction without execution is just a handshake." },
+              { n: "Access", d: "A growing network of investors, distributors, and operators - strongest in Singapore and Southeast Asia, with reach into India and China." },
+              { n: "Speed", d: "First introductions in weeks. We aim to move at the pace of opportunity, not at the pace of a typical advisory engagement." },
+              { n: "Follow-through", d: "We stay involved beyond the introduction. A connection only has value if it leads somewhere concrete." },
             ].map((item, i) => (
               <div key={item.n} data-rc style={{
                 padding: "3rem 2.5rem",
@@ -265,8 +265,8 @@ export default function Home() {
                 fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(255,255,255,0.4)",
                 marginBottom: "2.5rem",
               }}>
-                The funds and corporates entering now — with the right local partners —
-                will define the next decade. Local access is the differentiator.
+                For funds, family offices, and corporates with a long-term view,
+                building the right local relationships now is key.
               </p>
               <Btn to="/why-asia" variant="outline">Explore why →</Btn>
             </div>
@@ -274,10 +274,10 @@ export default function Home() {
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem",
             }}>
               {[
-                { n: "Singapore", d: "Asia's financial capital. Where every serious player sets up." },
-                { n: "Southeast Asia", d: "Digital-first economies. Under-penetrated. Rewarding first movers." },
-                { n: "India", d: "Scale meets ambition. The ecosystem the world is watching." },
-                { n: "China", d: "Complex. Essential. Requires trusted local intermediaries." },
+                { n: "Singapore", d: "Our home base. Asia's financial hub and natural starting point." },
+                { n: "Southeast Asia", d: "Our core focus. Fast-growing, digital-first, full of opportunity." },
+                { n: "India", d: "Extended reach through trusted partners. A market we're actively exploring." },
+                { n: "China", d: "Selective access through local intermediaries we work with." },
               ].map((m) => (
                 <div key={m.n} data-rc style={{
                   padding: "1.75rem", borderRadius: "12px",

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 /* ═══════════════════════════════════════════
-   KAVELA — DESIGN SYSTEM v3
+   KAVELA - DESIGN SYSTEM v3
    Premium. Cinematic. Understated confidence.
    ═══════════════════════════════════════════ */
 
@@ -44,15 +44,17 @@ export function GlobalStyles() {
       img { max-width: 100%; display: block; }
       a { text-decoration: none; color: inherit; }
 
-      /* Reveal */
+      /* Reveal - lighter transforms for fluidity */
       [data-r] {
-        opacity: 0; transform: translateY(40px);
-        transition: opacity 0.9s ${EASE}, transform 0.9s ${EASE};
+        opacity: 0; transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
       }
       [data-r].vis { opacity: 1 !important; transform: translateY(0) !important; }
       [data-rs] > [data-rc] {
-        opacity: 0; transform: translateY(30px);
-        transition: opacity 0.8s ${EASE}, transform 0.8s ${EASE};
+        opacity: 0; transform: translateY(14px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        will-change: opacity, transform;
       }
       [data-rs].vis > [data-rc] { opacity: 1 !important; transform: translateY(0) !important; }
 
@@ -245,7 +247,7 @@ export function Nav() {
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       transition: "all 0.35s ease",
       backgroundColor: bg, boxShadow: shadow,
-      backdropFilter: solid ? "blur(16px) saturate(1.2)" : "none",
+      backdropFilter: solid ? "blur(12px)" : "none",
     }}>
       <Wrap>
         <nav style={{
@@ -253,12 +255,11 @@ export function Nav() {
         }}>
           <Link to="/" style={{ display: "flex", alignItems: "center" }}>
             <img
-              src="/LogoKavela.png"
+              src={solid ? "/transparent-07.png" : "/LogoKavela.png"}
               alt="Kavela"
               style={{
                 height: "110px", width: "auto",
-                filter: solid ? "none" : "brightness(0) invert(1)",
-                transition: "filter 0.3s",
+                transition: "opacity 0.3s",
               }}
             />
           </Link>
@@ -337,13 +338,14 @@ export function Footer() {
     <footer style={{ backgroundColor: NAVY, padding: "5.5rem 0 0" }}>
       <Wrap>
         <div className="g4" style={{
-          display: "grid", gridTemplateColumns: "2.5fr 1fr 1fr 1.5fr",
-          gap: "3rem", paddingBottom: "4.5rem",
+          display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.2fr",
+          gap: "4rem", paddingBottom: "4.5rem",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
+          alignItems: "start",
         }}>
           <div>
             <img src="/LogoKavela.png" alt="Kavela"
-              style={{ height: "40px", width: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem", opacity: 0.8 }}
+              style={{ height: "70px", width: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem", opacity: 0.8 }}
             />
             <p style={{ fontSize: "0.92rem", lineHeight: 1.75, color: "rgba(255,255,255,0.35)", maxWidth: "300px" }}>
               Connecting corporates, investment funds, and family offices to the right people in Asia.
@@ -351,24 +353,24 @@ export function Footer() {
           </div>
 
           <div>
-            <p style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.5rem" }}>Pages</p>
-            {[["Corporate","/corporate"],["Funds","/funds"],["Platform","/platform"],["Why Asia","/why-asia"]].map(([la,p]) => (
+            <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.75rem" }}>Pages</p>
+            {[["Corporate","/corporate"],["Funds & Family Offices","/funds"],["Platform","/platform"],["Why Asia","/why-asia"],["Contact","/contact"]].map(([la,p]) => (
               <Link key={la} to={p} style={lk} onMouseEnter={h} onMouseLeave={l}>{la}</Link>
             ))}
           </div>
 
           <div>
-            <p style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.5rem" }}>Connect</p>
+            <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.75rem" }}>Connect</p>
             <a href="mailto:contact@kavela.co" style={lk} onMouseEnter={h} onMouseLeave={l}>contact@kavela.co</a>
             <a href="https://www.linkedin.com/company/kavelagroup/" target="_blank" rel="noreferrer" style={lk} onMouseEnter={h} onMouseLeave={l}>LinkedIn</a>
           </div>
 
           <div>
-            <p style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.5rem" }}>Headquarters</p>
-            <p style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "rgba(255,255,255,0.35)" }}>
+            <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.75rem" }}>Headquarters</p>
+            <p style={{ fontSize: "0.88rem", lineHeight: 1.7, color: "rgba(255,255,255,0.4)" }}>
               Singapore
             </p>
-            <p style={{ fontSize: "0.82rem", lineHeight: 1.7, color: "rgba(255,255,255,0.25)", marginTop: "0.25rem" }}>
+            <p style={{ fontSize: "0.82rem", lineHeight: 1.7, color: "rgba(255,255,255,0.25)", marginTop: "0.35rem" }}>
               ASEAN · India · China
             </p>
           </div>

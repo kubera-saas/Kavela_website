@@ -41,7 +41,7 @@ export default function WhyAsiaPage() {
                 infrastructure in many markets leapfrogs the West.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.5rem" }}>
-                But the opportunity isn't in the macro numbers. It's in the specifics —
+                But the opportunity isn't in the macro numbers. It's in the specifics -
                 the regulatory window that opens for 18 months, the distribution
                 partner who controls an entire vertical, the LP network that only
                 meets through personal introductions.
@@ -70,7 +70,7 @@ export default function WhyAsiaPage() {
             </h2>
           </div>
 
-          {/* Market cards — alternating layout */}
+          {/* Market cards - alternating layout */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
 
             {/* Singapore */}
@@ -109,13 +109,13 @@ export default function WhyAsiaPage() {
               <div style={{ padding: "3.5rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: HEAD, fontWeight: 600, color: TEXT_D, fontSize: "1.5rem", marginBottom: "1.25rem" }}>Southeast Asia</h3>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY, marginBottom: "0.75rem" }}>
-                  Not one market — a mosaic. Indonesia alone has 280 million people and a
+                  Not one market - a mosaic. Indonesia alone has 280 million people and a
                   digital economy growing at 20% a year. Vietnam is the manufacturing
                   alternative everyone is watching. Thailand and the Philippines are
                   building consumer markets that reward first movers.
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
-                  The key to ASEAN is knowing which market fits your product — and knowing
+                  The key to ASEAN is knowing which market fits your product - and knowing
                   the distributor who controls that vertical.
                 </p>
               </div>
@@ -146,13 +146,14 @@ export default function WhyAsiaPage() {
               <div style={{ padding: "3.5rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: HEAD, fontWeight: 600, color: TEXT_D, fontSize: "1.5rem", marginBottom: "1.25rem" }}>India</h3>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY, marginBottom: "0.75rem" }}>
-                  The startup ecosystem the entire world is watching.
-                  Government-backed FDI push, a massive domestic consumer base,
-                  and a generation of founders who think global from day one.
+                  A market attracting global attention - government-backed FDI push,
+                  a massive domestic consumer base, and a generation of founders
+                  who think global from day one.
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
-                  But India rewards patience and the right local partner.
-                  We know who to introduce you to — and just as importantly, who to avoid.
+                  India rewards patience and the right local partner.
+                  We're building our network there and can facilitate introductions
+                  through trusted contacts on the ground.
                 </p>
               </div>
             </div>
@@ -166,14 +167,14 @@ export default function WhyAsiaPage() {
               <div style={{ padding: "3.5rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: HEAD, fontWeight: 600, color: TEXT_D, fontSize: "1.5rem", marginBottom: "1.25rem" }}>China</h3>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY, marginBottom: "0.75rem" }}>
-                  Complex. Essential. Impossible to navigate alone.
-                  The regulatory landscape shifts constantly, the business culture
-                  is relationship-first, and the competitive dynamics are unlike
-                  anywhere else in the world.
+                  A complex but important market. The regulatory landscape shifts
+                  constantly, the business culture is relationship-first, and
+                  the competitive dynamics are unique.
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
-                  We don't pretend China is easy. We provide selective,
-                  trusted access — through intermediaries we've worked with for years.
+                  We're transparent: China isn't our primary focus. But through
+                  trusted intermediaries we work with, we can help facilitate
+                  selective introductions when the opportunity is right.
                 </p>
               </div>
               <div style={{ position: "relative", minHeight: "320px" }}>
@@ -229,8 +230,8 @@ export default function WhyAsiaPage() {
               letterSpacing: "-0.03em", marginBottom: "1.5rem",
               maxWidth: "500px",
             }}>
-              Asia is ready.<br />
-              <strong style={{ fontWeight: 600 }}>Are you?</strong>
+              Interested in Asia?<br />
+              <strong style={{ fontWeight: 600 }}>Let's talk about it.</strong>
             </h2>
             <Btn to="/contact" variant="white">Let's meet →</Btn>
           </div>

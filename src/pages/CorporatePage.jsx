@@ -10,8 +10,8 @@ export default function CorporatePage() {
 
       <PageHero
         label="For Corporates"
-        title="You know the market<br/>is there. <strong style='font-weight:600'>We know<br/>the people.</strong>"
-        subtitle="Asia isn't one market. It's dozens — each with its own rules, players, and timing. We provide direct access to the partners, distributors, and decision-makers who matter in each one."
+        title="Expanding into Asia?<br/><strong style='font-weight:600'>We can help you<br/>get there.</strong>"
+        subtitle="Asia isn't one market. It's dozens - each with its own rules, players, and timing. We help you find the right partners, distributors, and decision-makers."
         image={IMG.corporate}
       >
         <Btn to="/contact" variant="white">Let's meet →</Btn>
@@ -27,17 +27,17 @@ export default function CorporatePage() {
               fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.15,
               letterSpacing: "-0.025em", marginBottom: "2rem",
             }}>
-              Most companies enter Asia <strong style={{ fontWeight: 600 }}>too slowly.</strong>
+              Entering Asia takes <strong style={{ fontWeight: 600 }}>the right approach.</strong>
             </h2>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.25rem" }}>
-              They invest in lengthy scoping phases, hire advisory firms, and wait
-              for a market entry report. By the time the report arrives,
-              the competitive window has moved.
+              Traditional approaches often involve lengthy scoping phases
+              and advisory engagements. By the time the analysis is complete,
+              the market has already moved.
             </p>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
-              Our approach is different: direct introductions to the distributor
-              who will carry your product, the partner who will co-develop your
-              offering — delivered in weeks, not quarters.
+              We take a more direct approach: helping you meet the distributor
+              who could carry your product, or the partner who could co-develop your
+              offering - with a focus on actionable introductions.
             </p>
           </div>
         </Wrap>
@@ -65,15 +65,15 @@ export default function CorporatePage() {
             {[
               {
                 title: "Market Entry",
-                desc: "We identify the specific market, the specific partners, and the specific timing for your entry. Then we make the introductions that get you in the room.",
+                desc: "We help identify the right market, the right partners, and the right timing for your entry - then facilitate the introductions that matter.",
               },
               {
                 title: "Partnerships",
-                desc: "Distributors, JV partners, local operators — we know who is serious, who delivers, and who to avoid. Every introduction is pre-qualified.",
+                desc: "Distributors, JV partners, local operators - we work to connect you with people we trust and have worked with. Each introduction is considered carefully.",
               },
               {
                 title: "Deal Execution",
-                desc: "We don't hand you a list and wish you luck. We stay in the room, facilitate negotiations, and make sure deals actually close.",
+                desc: "We stay involved beyond the introduction - helping facilitate conversations, bridge cultural gaps, and support the path to a concrete outcome.",
               },
             ].map((o, i) => (
               <div key={o.title} data-rc style={{
@@ -140,8 +140,8 @@ export default function CorporatePage() {
               letterSpacing: "-0.03em", marginBottom: "1.5rem",
               maxWidth: "550px",
             }}>
-              Tell us the market.<br />
-              <strong style={{ fontWeight: 600 }}>We'll open the door.</strong>
+              Interested in Asia?<br />
+              <strong style={{ fontWeight: 600 }}>Let's explore together.</strong>
             </h2>
             <Btn to="/contact" variant="white">Let's meet →</Btn>
           </div>

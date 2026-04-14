@@ -10,8 +10,8 @@ export default function FundsPage() {
 
       <PageHero
         label="For Funds & Family Offices"
-        title="Asia exposure starts with<br/><strong style='font-weight:600'>the right connections.</strong>"
-        subtitle="Operational support on the ground, portfolio expansion, and deal flow — through people who know the local ecosystems firsthand."
+        title="Exploring Asia for<br/><strong style='font-weight:600'>your fund or family office?</strong>"
+        subtitle="Operational support, portfolio expansion, and deal flow - through people who know the local ecosystems firsthand."
         image={IMG.funds}
       >
         <Btn to="/contact" variant="white">Let's meet →</Btn>
@@ -35,21 +35,21 @@ export default function FundsPage() {
               </h2>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.25rem" }}>
                 Knowing who to work with, where to deploy, and how to access
-                deal flow that doesn't come through a terminal — that's what
-                takes years to build.
+                the right deal flow - that takes time and local relationships
+                to develop.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
-                We've built those relationships — with founders, LPs,
-                co-investors, and operators across the region.
-                Funds and family offices tap into that network from day one.
+                We've been building those relationships - with founders, LPs,
+                co-investors, and operators, particularly in Singapore and Southeast Asia.
+                Our goal is to help funds and family offices benefit from that network.
               </p>
             </div>
 
             <div>
               {[
-                { title: "Market positioning", desc: "Where to deploy, how to position your thesis, and who you need to know — tailored to your fund or family office mandate." },
+                { title: "Market positioning", desc: "Where to deploy, how to position your thesis, and who you need to know - tailored to your fund or family office mandate." },
                 { title: "Ecosystem access", desc: "Direct introductions to LPs, co-investors, founders, and corporate partners. A network, not a database." },
-                { title: "Operational support", desc: "On-the-ground guidance — from local infrastructure to regulatory navigation — to help turn your Asia strategy into a working presence." },
+                { title: "Operational support", desc: "On-the-ground guidance - from local infrastructure to regulatory navigation - to help turn your Asia strategy into a working presence." },
               ].map((item, i) => (
                 <div key={item.title} data-r style={{
                   padding: "2rem 0",
@@ -83,7 +83,7 @@ export default function FundsPage() {
             </h2>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
               We work directly with portfolio companies on the ground. Same rigor,
-              same accountability, same urgency — the investor-grade execution
+              same accountability, same urgency - the investor-grade execution
               your companies deserve.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function FundsPage() {
               },
               {
                 title: "Partnerships & ops",
-                desc: "From distribution deals to local hiring — we find the right people and stay involved until the relationship is working.",
+                desc: "From distribution deals to local hiring - we find the right people and stay involved until the relationship is working.",
               },
               {
                 title: "Follow-on capital",
@@ -134,7 +134,7 @@ export default function FundsPage() {
               lineHeight: 1.55, letterSpacing: "-0.01em",
             }}>
               "We work daily with growth-stage companies expanding in Asia
-              — businesses backed by funds and family offices, operating under
+              - businesses backed by funds and family offices, operating under
               investor-grade expectations. That experience shapes everything we do."
             </p>
           </div>
@@ -153,8 +153,8 @@ export default function FundsPage() {
               letterSpacing: "-0.03em", marginBottom: "1.5rem",
               maxWidth: "550px",
             }}>
-              Your fund's next chapter<br />
-              <strong style={{ fontWeight: 600 }}>starts in Asia.</strong>
+              Let's discuss your<br />
+              <strong style={{ fontWeight: 600 }}>Asia ambitions.</strong>
             </h2>
             <Btn to="/contact" variant="white">Let's meet →</Btn>
           </div>

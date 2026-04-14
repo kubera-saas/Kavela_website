@@ -59,7 +59,7 @@ export default function ContactPage() {
                 fontSize: "1.6rem", lineHeight: 1.3, marginBottom: "1.5rem",
               }}>
                 Whether you're a fund, a family office, or a corporate
-                exploring the right entry point into Asia — we'd like to hear from you.
+                exploring the right entry point into Asia - we'd like to hear from you.
               </h2>
 
               {/* Email */}

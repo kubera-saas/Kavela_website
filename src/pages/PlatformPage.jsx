@@ -11,7 +11,7 @@ export default function PlatformPage() {
       <PageHero
         label="How it works"
         title="Not a consulting firm.<br/><strong style='font-weight:600'>A platform.</strong>"
-        subtitle="We activate a network built over years of operating in Asia. For corporates, funds, and family offices looking to move with precision."
+        subtitle="We leverage a network built through years of working in Asia - for corporates, funds, and family offices looking to enter or grow in the region."
         image={IMG.platform}
       >
         <Btn to="/contact" variant="white">Get started →</Btn>
@@ -37,15 +37,15 @@ export default function PlatformPage() {
             {[
               {
                 num: "01", title: "Map",
-                desc: "We sit with you and define what winning looks like in Asia. Not a generic scan — a focused assessment of where you have an unfair advantage, who the key players are, and what the real timeline looks like.",
+                desc: "We start by understanding your goals and constraints. Together, we assess where the best opportunities are, who the relevant players are, and what a realistic timeline looks like.",
               },
               {
                 num: "02", title: "Connect",
-                desc: "We activate our network. The right investors, the right distributors, the right operators — matched to your specific needs. Every introduction is pre-qualified and comes with context on both sides.",
+                desc: "We tap into our network to find relevant matches - investors, distributors, operators - tailored to your specific needs. Each introduction comes with context on both sides.",
               },
               {
                 num: "03", title: "Close",
-                desc: "We stay in the room. Facilitating negotiations, bridging cultural gaps, handling the back-and-forth that turns a warm introduction into a signed agreement.",
+                desc: "We stay involved after the introduction - helping facilitate discussions, bridging cultural differences, and supporting the process through to a concrete outcome.",
               },
             ].map((s, i) => (
               <div key={s.title} data-rc style={{
@@ -94,19 +94,19 @@ export default function PlatformPage() {
                 <strong style={{ fontWeight: 600 }}>Activated in days.</strong>
               </h2>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
-                Our network isn't a contact database. It's a curated set of
-                relationships — with investors, distributors, operators, and
-                decision-makers across Asia — built through years of
-                doing business together.
+                Our network is a set of relationships built through years of
+                working together - with investors, distributors, operators, and
+                decision-makers, primarily in Singapore and Southeast Asia,
+                with growing reach into India and China.
               </p>
             </div>
 
             <div data-rs style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
               {[
-                { n: "Singapore", r: "Hub. Where we sit. Where the capital flows." },
-                { n: "Southeast Asia", r: "Indonesia, Vietnam, Thailand, Philippines. Market by market." },
-                { n: "India", r: "Founders, corporates, VCs. The ecosystem everyone is watching." },
-                { n: "China", r: "Selective access. Trusted intermediaries. No shortcuts." },
+                { n: "Singapore", r: "Our home base and the hub for our operations." },
+                { n: "Southeast Asia", r: "Our core focus - Indonesia, Vietnam, Thailand, Philippines." },
+                { n: "India", r: "Growing reach through trusted local partners." },
+                { n: "China", r: "Selective access through established intermediaries." },
               ].map((m) => (
                 <div key={m.n} data-rc style={{
                   padding: "1.5rem 1.75rem", borderRadius: "10px",
@@ -157,7 +157,7 @@ export default function PlatformPage() {
                   display: "flex", alignItems: "center", gap: "0.85rem",
                   padding: "0.7rem 0", borderBottom: `1px solid ${GRAY_L}`,
                 }}>
-                  <span style={{ color: GRAY, fontSize: "0.8rem" }}>—</span>
+                  <span style={{ color: GRAY, fontSize: "0.8rem" }}>-</span>
                   <span style={{ fontSize: "0.95rem", color: GRAY }}>{t}</span>
                 </div>
               ))}
@@ -201,8 +201,8 @@ export default function PlatformPage() {
               letterSpacing: "-0.03em", marginBottom: "1.5rem",
               maxWidth: "550px",
             }}>
-              Tell us where you're going.<br />
-              <strong style={{ fontWeight: 600 }}>We'll show you who to meet.</strong>
+              Curious about how it works?<br />
+              <strong style={{ fontWeight: 600 }}>Let's have a conversation.</strong>
             </h2>
             <Btn to="/contact" variant="white">Let's meet →</Btn>
           </div>
