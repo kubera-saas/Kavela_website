@@ -10,8 +10,8 @@ export default function CorporatePage() {
 
       <PageHero
         label="For Corporates"
-        title="Expanding into Asia?<br/><strong style='font-weight:600'>We can help you<br/>get there.</strong>"
-        subtitle="Asia isn't one market. It's dozens - each with its own rules, players, and timing. We help you find the right partners, distributors, and decision-makers."
+        title="Growing in Asia?<br/><strong style='font-weight:600'>We connect you<br/>to the right people.</strong>"
+        subtitle="Asia isn't one market. It's dozens - each with its own rules, players, and timing. Whether you're entering or already here, we help you find the right partners, distributors, and decision-makers."
         image={IMG.corporate}
       >
         <Btn to="/contact" variant="white">Let's meet →</Btn>
@@ -27,12 +27,13 @@ export default function CorporatePage() {
               fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.15,
               letterSpacing: "-0.025em", marginBottom: "2rem",
             }}>
-              Entering Asia takes <strong style={{ fontWeight: 600 }}>the right approach.</strong>
+              Succeeding in Asia takes <strong style={{ fontWeight: 600 }}>the right approach.</strong>
             </h2>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.25rem" }}>
-              Traditional approaches often involve lengthy scoping phases
-              and advisory engagements. By the time the analysis is complete,
-              the market has already moved.
+              Whether you're entering a new market or looking to expand from
+              where you already operate, traditional approaches often involve
+              lengthy scoping phases and advisory engagements. By the time the
+              analysis is complete, the market has already moved.
             </p>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
               We take a more direct approach: helping you meet the distributor
@@ -64,8 +65,8 @@ export default function CorporatePage() {
           }}>
             {[
               {
-                title: "Market Entry",
-                desc: "We help identify the right market, the right partners, and the right timing for your entry - then facilitate the introductions that matter.",
+                title: "Market Entry & Expansion",
+                desc: "Whether you're entering a new Asian market or expanding within the region, we help identify the right partners and timing - then facilitate the introductions that matter.",
               },
               {
                 title: "Partnerships",

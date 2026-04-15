@@ -40,7 +40,7 @@ export default function ContactPage() {
               color: "rgba(255,255,255,0.5)", maxWidth: "420px",
               fontFamily: BODY, fontWeight: 300,
             }}>
-              You tell us where you want to go. We'll tell you who you need to meet.
+              Tell us what you're working on. We'll tell you who you need to meet.
             </p>
           </div>
         </Wrap>
@@ -58,8 +58,9 @@ export default function ContactPage() {
                 fontFamily: HEAD, fontWeight: 300, color: TEXT_D,
                 fontSize: "1.6rem", lineHeight: 1.3, marginBottom: "1.5rem",
               }}>
-                Whether you're a fund, a family office, or a corporate
-                exploring the right entry point into Asia - we'd like to hear from you.
+                Whether you're a fund, a family office, or a corporate -
+                entering Asia, expanding within it, or looking for the right connections -
+                we'd like to hear from you.
               </h2>
 
               {/* Email */}
@@ -138,8 +139,8 @@ export default function ContactPage() {
                   color: `${BLUE}90`, fontWeight: 600, fontFamily: HEAD, marginBottom: "1.5rem",
                 }}>What we cover</p>
                 {[
-                  "Corporate market entry & partnerships",
-                  "Fund & family office expansion in Asia",
+                  "Market entry & regional expansion",
+                  "Fund & family office growth in Asia",
                   "Deal sourcing & execution",
                   "Network activation across 4 markets",
                 ].map((t) => (

@@ -11,7 +11,7 @@ export default function PlatformPage() {
       <PageHero
         label="How it works"
         title="Not a consulting firm.<br/><strong style='font-weight:600'>A platform.</strong>"
-        subtitle="We leverage a network built through years of working in Asia - for corporates, funds, and family offices looking to enter or grow in the region."
+        subtitle="A network built through years of working in Asia - for corporates, funds, and family offices looking to grow, expand, or strengthen their position in the region."
         image={IMG.platform}
       >
         <Btn to="/contact" variant="white">Get started →</Btn>

@@ -413,7 +413,7 @@ export function Footer() {
               style={{ height: "70px", width: "auto", filter: "brightness(0) invert(1)", marginBottom: "1.5rem", opacity: 0.8 }}
             />
             <p style={{ fontSize: "0.92rem", lineHeight: 1.75, color: "rgba(255,255,255,0.35)", maxWidth: "300px" }}>
-              Connecting corporates, investment funds, and family offices to the right people in Asia.
+              Connecting corporates, funds, and family offices with the right people across Asia.
             </p>
           </div>
 

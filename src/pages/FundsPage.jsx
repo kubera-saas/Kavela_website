@@ -10,8 +10,8 @@ export default function FundsPage() {
 
       <PageHero
         label="For Funds & Family Offices"
-        title="Exploring Asia for<br/><strong style='font-weight:600'>your fund or family office?</strong>"
-        subtitle="Operational support, portfolio expansion, and deal flow - through people who know the local ecosystems firsthand."
+        title="Deploying or growing<br/><strong style='font-weight:600'>in Asia?</strong>"
+        subtitle="Operational support, portfolio expansion, and deal flow - whether you're building your first Asia presence or deepening an existing one."
         image={IMG.funds}
       >
         <Btn to="/contact" variant="white">Let's meet →</Btn>
@@ -24,19 +24,19 @@ export default function FundsPage() {
             display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start",
           }}>
             <div>
-              <Label>Entering Asia</Label>
+              <Label>Operating in Asia</Label>
               <h2 style={{
                 fontFamily: HEAD, fontWeight: 200, color: TEXT_D,
                 fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.15,
                 letterSpacing: "-0.025em", marginBottom: "1.5rem",
               }}>
-                Deploying in Asia<br />
-                <strong style={{ fontWeight: 600 }}>requires local trust.</strong>
+                Asia runs on<br />
+                <strong style={{ fontWeight: 600 }}>local trust.</strong>
               </h2>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.25rem" }}>
-                Knowing who to work with, where to deploy, and how to access
-                the right deal flow - that takes time and local relationships
-                to develop.
+                Whether you're deploying into a new market or looking to expand
+                your regional footprint, knowing who to work with and how to access
+                the right deal flow takes time and local relationships.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY }}>
                 We've been building those relationships - with founders, LPs,
@@ -47,9 +47,9 @@ export default function FundsPage() {
 
             <div>
               {[
-                { title: "Market positioning", desc: "Where to deploy, how to position your thesis, and who you need to know - tailored to your fund or family office mandate." },
+                { title: "Market positioning", desc: "Where to deploy next, how to position your thesis, and who you need to know - tailored to your fund or family office mandate." },
                 { title: "Ecosystem access", desc: "Direct introductions to LPs, co-investors, founders, and corporate partners. A network, not a database." },
-                { title: "Operational support", desc: "On-the-ground guidance - from local infrastructure to regulatory navigation - to help turn your Asia strategy into a working presence." },
+                { title: "Operational support", desc: "On-the-ground guidance - from local infrastructure to regulatory navigation - to help turn your Asia strategy into results." },
               ].map((item, i) => (
                 <div key={item.title} data-r style={{
                   padding: "2rem 0",
@@ -133,9 +133,9 @@ export default function FundsPage() {
               fontSize: "clamp(1.3rem, 2.8vw, 1.8rem)",
               lineHeight: 1.55, letterSpacing: "-0.01em",
             }}>
-              "We work daily with growth-stage companies expanding in Asia
-              - businesses backed by funds and family offices, operating under
-              investor-grade expectations. That experience shapes everything we do."
+              "We work daily with growth-stage companies operating and expanding
+              across Asia - businesses backed by funds and family offices,
+              held to investor-grade expectations. That experience shapes everything we do."
             </p>
           </div>
         </Wrap>

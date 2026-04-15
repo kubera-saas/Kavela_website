@@ -115,7 +115,7 @@ export default function Home() {
               lineHeight: 1.05, letterSpacing: "-0.035em",
               marginBottom: "2rem", maxWidth: "900px",
             }}>
-              Your next market<br />is in <strong style={{ fontWeight: 600 }}>Asia.</strong>
+              The right people.<br />The right market.<br /><strong style={{ fontWeight: 600 }}>Asia.</strong>
             </h1>
 
             <p style={{
@@ -123,8 +123,9 @@ export default function Home() {
               color: "rgba(255,255,255,0.5)", maxWidth: "480px",
               marginBottom: "3rem", fontFamily: BODY, fontWeight: 300,
             }}>
-              We help investment funds, family offices, and corporates
-              find the right partners and opportunities in Southeast Asia.
+              We connect investment funds, family offices, and corporates
+              with the right partners and opportunities across Asia -
+              whether you're entering the region or already operating here.
             </p>
 
             <div className="kv-hero-btns" style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", alignItems: "center" }}>
@@ -145,8 +146,9 @@ export default function Home() {
               letterSpacing: "-0.01em",
             }}>
               Kavela is a <strong style={{ fontWeight: 600, color: BLUE }}>network-driven platform</strong>.
-              We help corporates, funds, and family offices connect with
-              the right investors, distributors, and operators across Asia.
+              We connect corporates, funds, and family offices with
+              the right investors, distributors, and operators across Asia -
+              whether you're building your first presence or scaling what you already have.
             </p>
           </div>
         </Wrap>
@@ -160,9 +162,9 @@ export default function Home() {
             to="/corporate"
             image={IMG.corporate}
             label="For Corporates"
-            title="Expanding into Asia?<br/><strong style='font-weight:600'>We can help.</strong>"
-            subtitle="Market entry, distribution partnerships, and deal execution - with a focus on Singapore and Southeast Asia."
-            themes={["Market entry", "High-value introductions", "Distribution partnerships", "Deal execution"]}
+            title="Growing in Asia?<br/><strong style='font-weight:600'>We can help.</strong>"
+            subtitle="Market entry, regional expansion, distribution partnerships, and deal execution - with a focus on Singapore and Southeast Asia."
+            themes={["Market entry", "Regional expansion", "Distribution partnerships", "Deal execution"]}
             side="left"
           />
 
@@ -170,8 +172,8 @@ export default function Home() {
             to="/funds"
             image={IMG.funds}
             label="For Funds & Family Offices"
-            title="Looking for Asia exposure?<br/><strong style='font-weight:600'>Let's explore together.</strong>"
-            subtitle="Operational support, portfolio expansion, and deal flow through local networks we've built over the years."
+            title="Deploying or growing<br/><strong style='font-weight:600'>in Asia?</strong>"
+            subtitle="Operational support, portfolio expansion, and deal flow - through local networks we've built over the years."
             themes={["Operational support", "Portfolio expansion", "Deal flow", "LP & co-investor access"]}
             side="right"
           />
@@ -200,10 +202,10 @@ export default function Home() {
             </div>
             <div style={{ paddingTop: "0.5rem" }}>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: GRAY, fontFamily: BODY, marginBottom: "1.5rem" }}>
-                Many expansion journeys lose momentum - not because the strategy is wrong,
-                but because the right introductions don't happen soon enough. That's
-                where we focus: helping match the right distributor, LP,
-                or operator to your specific needs.
+                Whether you're entering a new market or deepening your presence
+                in one you already know, momentum depends on the right introductions
+                happening at the right time. That's where we focus: matching the right
+                distributor, LP, or operator to your specific needs.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: GRAY, fontFamily: BODY }}>
                 And we stay involved until the relationship is working.
@@ -265,8 +267,8 @@ export default function Home() {
                 fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(255,255,255,0.4)",
                 marginBottom: "2.5rem",
               }}>
-                For funds, family offices, and corporates with a long-term view,
-                building the right local relationships now is key.
+                Whether you're based in London, Paris, or Singapore -
+                building the right local relationships is key to capturing this shift.
               </p>
               <Btn to="/why-asia" variant="outline">Explore why →</Btn>
             </div>
@@ -309,7 +311,7 @@ export default function Home() {
               fontSize: "1.1rem", lineHeight: 1.7, color: GRAY, fontFamily: BODY,
               maxWidth: "420px", margin: "0 auto 3rem",
             }}>
-              Tell us where you want to go.<br />
+              Tell us what you're working on.<br />
               We'll tell you who you need to meet.
             </p>
             <Btn to="/contact">Get in touch →</Btn>

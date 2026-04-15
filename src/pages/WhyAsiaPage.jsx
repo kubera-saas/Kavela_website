@@ -95,7 +95,7 @@ export default function WhyAsiaPage() {
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
                   Strong rule of law, English-speaking, and plugged into every market in the region.
-                  If you're entering Asia, you start here.
+                  Whether you're entering Asia or expanding within it, this is where it all connects.
                 </p>
               </div>
             </div>
@@ -200,8 +200,8 @@ export default function WhyAsiaPage() {
               fontSize: "clamp(1.3rem, 2.8vw, 1.8rem)",
               lineHeight: 1.55, letterSpacing: "-0.01em",
             }}>
-              "The funds, family offices, and corporates that establish the right local
-              partnerships now will be best positioned for the decade ahead."
+              "The funds, family offices, and corporates - wherever they're based -
+              that build the right local partnerships now will be best positioned for the decade ahead."
             </p>
           </div>
         </Wrap>
