@@ -36,9 +36,9 @@ export default function WhyAsiaPage() {
             </div>
             <div style={{ paddingTop: "0.5rem" }}>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.5rem" }}>
-                More than half of the world's middle class will live in Asia by 2030.
-                The region already produces more unicorns than Europe. Its digital
-                infrastructure in many markets leapfrogs the West.
+                Asia's economic weight is growing fast - in consumption, in technology,
+                in capital flows. The region is no longer a future bet. It's where
+                a significant share of global growth is already happening.
               </p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: GRAY, fontFamily: BODY, marginBottom: "1.5rem" }}>
                 But the opportunity isn't in the macro numbers. It's in the specifics -
@@ -109,10 +109,9 @@ export default function WhyAsiaPage() {
               <div style={{ padding: "3.5rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: HEAD, fontWeight: 600, color: TEXT_D, fontSize: "1.5rem", marginBottom: "1.25rem" }}>Southeast Asia</h3>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY, marginBottom: "0.75rem" }}>
-                  Not one market - a mosaic. Indonesia alone has 280 million people and a
-                  digital economy growing at 20% a year. Vietnam is the manufacturing
-                  alternative everyone is watching. Thailand and the Philippines are
-                  building consumer markets that reward first movers.
+                  Not one market - a mosaic. Each country has its own dynamics,
+                  its own regulatory environment, and its own way of doing business.
+                  The opportunities are real, but so is the complexity.
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
                   The key to ASEAN is knowing which market fits your product - and knowing
@@ -146,9 +145,9 @@ export default function WhyAsiaPage() {
               <div style={{ padding: "3.5rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: HEAD, fontWeight: 600, color: TEXT_D, fontSize: "1.5rem", marginBottom: "1.25rem" }}>India</h3>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY, marginBottom: "0.75rem" }}>
-                  A market attracting global attention - government-backed FDI push,
-                  a massive domestic consumer base, and a generation of founders
-                  who think global from day one.
+                  A market attracting significant global attention - large domestic
+                  consumer base, growing investor appetite, and an increasingly
+                  dynamic business environment.
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
                   India rewards patience and the right local partner.
