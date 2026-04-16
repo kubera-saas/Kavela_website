@@ -303,6 +303,7 @@ export function Nav() {
     ["Funds", "/funds"],
     ["Platform", "/platform"],
     ["Why Asia", "/why-asia"],
+    ["Insights", "/blog"],
   ];
 
   return (
@@ -336,11 +337,11 @@ export function Nav() {
                 <Link to={path} style={{
                   color: fg, fontSize: "0.88rem", fontWeight: 500,
                   fontFamily: HEAD,
-                  opacity: location.pathname === path ? 1 : 0.55,
+                  opacity: (path === "/" ? location.pathname === "/" : location.pathname.startsWith(path)) ? 1 : 0.55,
                   transition: "opacity 0.2s",
                 }}
                   onMouseEnter={e => e.currentTarget.style.opacity = "1"}
-                  onMouseLeave={e => { if (location.pathname !== path) e.currentTarget.style.opacity = "0.55"; }}
+                  onMouseLeave={e => { const active = path === "/" ? location.pathname === "/" : location.pathname.startsWith(path); if (!active) e.currentTarget.style.opacity = "0.55"; }}
                 >{label}</Link>
               </li>
             ))}
@@ -419,7 +420,7 @@ export function Footer() {
 
           <div>
             <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.75rem" }}>Pages</p>
-            {[["Corporate","/corporate"],["Funds & Family Offices","/funds"],["Platform","/platform"],["Why Asia","/why-asia"],["Contact","/contact"]].map(([la,p]) => (
+            {[["Corporate","/corporate"],["Funds & Family Offices","/funds"],["Platform","/platform"],["Why Asia","/why-asia"],["Insights","/blog"],["Contact","/contact"]].map(([la,p]) => (
               <Link key={la} to={p} style={lk} onMouseEnter={h} onMouseLeave={l}>{la}</Link>
             ))}
           </div>

@@ -6,6 +6,8 @@ import FundsPage from "./pages/FundsPage";
 import PlatformPage from "./pages/PlatformPage";
 import WhyAsiaPage from "./pages/WhyAsiaPage";
 import ContactPage from "./pages/ContactPage";
+import BlogPage from "./pages/BlogPage";
+import ArticlePage from "./pages/ArticlePage";
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="/platform" element={<PlatformPage />} />
           <Route path="/why-asia" element={<WhyAsiaPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<ArticlePage />} />
         </Routes>
       </main>
       <Footer />
