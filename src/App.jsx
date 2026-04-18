@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalStyles, Nav, Footer, ScrollTop } from "./components/shared";
+import Home from "./pages/Home";
 
-const Home = lazy(() => import("./pages/Home"));
 const CorporatePage = lazy(() => import("./pages/CorporatePage"));
 const FundsPage = lazy(() => import("./pages/FundsPage"));
 const PlatformPage = lazy(() => import("./pages/PlatformPage"));

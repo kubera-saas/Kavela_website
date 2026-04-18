@@ -24,7 +24,7 @@ export const MAX_W    = "1280px";
 /* ─── IMAGES ─── */
 const U = (id, w = 1280, q = 75) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
 export const IMG = {
-  heroHome:  U("photo-1525625293386-3f8f99389edd", 1920, 80), // Singapore skyline MBS dusk (hero - full size)
+  heroHome:  U("photo-1525625293386-3f8f99389edd"),            // Singapore skyline MBS dusk (hero)
   corporate: U("photo-1444723121867-7a241cacace9"),            // Singapore skyline night wide
   funds:     U("photo-1508964942454-1a56651d54ac"),            // Singapore MBS night
   platform:  U("photo-1517309230475-6736d926b979"),            // Hong Kong night
