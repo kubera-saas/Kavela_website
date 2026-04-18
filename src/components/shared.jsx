@@ -111,9 +111,9 @@ export function GlobalStyles() {
         /* Parallax: disable on mobile/iOS */
         .kv-parallax { background-attachment: scroll !important; }
 
-        /* Nav: smaller logo, fits cleanly inside the bar */
-        .kv-nav { height: 64px !important; }
-        .kv-nav-logo { height: 44px !important; }
+        /* Nav: logo fits cleanly inside the bar */
+        .kv-nav { height: 72px !important; }
+        .kv-nav-logo { height: 60px !important; }
 
         /* Footer */
         footer { padding-top: 3rem !important; }
@@ -137,8 +137,8 @@ export function GlobalStyles() {
         .kv-hero { min-height: 60vh !important; }
         .kv-hero-inner { padding-top: 7rem !important; padding-bottom: 3rem !important; }
 
-        .kv-nav { height: 60px !important; }
-        .kv-nav-logo { height: 40px !important; }
+        .kv-nav { height: 68px !important; }
+        .kv-nav-logo { height: 54px !important; }
 
         .kv-footer-grid { gap: 2rem !important; }
         .kv-footer-logo { height: 40px !important; }
@@ -300,6 +300,11 @@ export function Nav() {
 
   useEffect(() => { setMobileOpen(false); }, [location]);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   const isHome = location.pathname === "/";
   const solid = scrolled || !isHome;
   const bg = solid ? `rgba(255,255,255,0.96)` : "transparent";
@@ -376,36 +381,79 @@ export function Nav() {
         </nav>
       </Wrap>
 
-      {mobileOpen && (
+      <div
+        aria-hidden={!mobileOpen}
+        style={{
+          position: "fixed", inset: 0, zIndex: 200,
+          backgroundColor: NAVY, color: WHITE,
+          display: "flex", flexDirection: "column",
+          transform: mobileOpen ? "translateX(0)" : "translateX(100%)",
+          transition: `transform 0.35s ${EASE}`,
+          pointerEvents: mobileOpen ? "auto" : "none",
+          willChange: "transform",
+        }}
+      >
         <div style={{
-          background: WHITE, borderTop: `1px solid ${GRAY_L}`,
-          padding: "0.5rem 0 1.25rem",
-          boxShadow: "0 12px 32px rgba(0,0,0,0.08)",
-          maxHeight: "calc(100vh - 60px)", overflowY: "auto",
+          padding: "0 clamp(1.5rem, 4vw, 2rem)",
+          height: "72px", flexShrink: 0,
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}>
-          <Wrap>
-            {links.map(([label, path], i) => (
+          <Link to="/" onClick={() => setMobileOpen(false)} style={{ display: "flex", alignItems: "center" }}>
+            <img src="/LogoKavela.png" alt="Kavela" style={{ height: "60px", width: "auto" }} />
+          </Link>
+          <button
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+            style={{
+              background: "none", border: "none", cursor: "pointer",
+              color: WHITE, fontSize: "1.6rem", padding: "8px",
+              display: "flex", alignItems: "center",
+            }}
+          >✕</button>
+        </div>
+
+        <nav style={{
+          flex: 1, display: "flex", flexDirection: "column", justifyContent: "center",
+          padding: "2rem clamp(1.75rem, 6vw, 3rem)", overflowY: "auto",
+        }}>
+          {links.map(([label, path]) => {
+            const active = path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
+            return (
               <Link key={label} to={path}
                 style={{
-                  display: "block", padding: "16px 0", fontSize: "1rem",
-                  fontWeight: 500, fontFamily: HEAD, color: TEXT_D,
-                  borderBottom: i < links.length - 1 ? `1px solid ${GRAY_L}` : "none",
+                  display: "block", padding: "0.65rem 0",
+                  fontFamily: HEAD, fontWeight: 300,
+                  fontSize: "clamp(1.9rem, 7vw, 2.4rem)",
+                  letterSpacing: "-0.02em",
+                  color: active ? WHITE : "rgba(255,255,255,0.55)",
                 }}
               >{label}</Link>
-            ))}
-            <Link to="/contact"
-              style={{
-                display: "block", marginTop: "1.25rem",
-                padding: "14px 20px", textAlign: "center",
-                background: BLUE, color: WHITE,
-                borderRadius: "6px", fontSize: "0.95rem",
-                fontWeight: 600, fontFamily: HEAD,
-                letterSpacing: "0.01em",
-              }}
-            >Let's meet →</Link>
-          </Wrap>
+            );
+          })}
+        </nav>
+
+        <div style={{
+          padding: "1.5rem clamp(1.75rem, 6vw, 3rem) 2rem",
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+          flexShrink: 0,
+        }}>
+          <Link to="/contact"
+            style={{
+              display: "block", textAlign: "center",
+              background: WHITE, color: NAVY,
+              padding: "16px 20px", borderRadius: "8px",
+              fontFamily: HEAD, fontWeight: 600,
+              fontSize: "1rem", letterSpacing: "0.01em",
+            }}
+          >Let's meet →</Link>
+          <p style={{
+            marginTop: "1.25rem", textAlign: "center",
+            fontSize: "0.78rem", color: "rgba(255,255,255,0.3)",
+            fontFamily: HEAD, letterSpacing: "0.06em",
+          }}>Singapore · ASEAN · India · China</p>
         </div>
-      )}
+      </div>
     </header>
   );
 }
