@@ -23,23 +23,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react-dom') || id.includes('/react/') || id.includes('react-router') || id.includes('scheduler')) {
-              return 'vendor-react';
-            }
-            if (id.includes('react-helmet-async')) {
-              return 'vendor-helmet';
-            }
-            if (id.includes('marked') || id.includes('front-matter')) {
-              return 'vendor-markdown';
-            }
-          }
-        },
-      },
-    },
     target: 'es2020',
   },
 })
