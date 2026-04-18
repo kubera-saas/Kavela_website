@@ -321,6 +321,7 @@ export function Nav() {
   ];
 
   return (
+    <>
     <header style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       transition: "all 0.35s ease",
@@ -380,19 +381,21 @@ export function Nav() {
           </button>
         </nav>
       </Wrap>
+    </header>
 
-      <div
-        aria-hidden={!mobileOpen}
-        style={{
-          position: "fixed", inset: 0, zIndex: 200,
-          backgroundColor: NAVY, color: WHITE,
-          display: "flex", flexDirection: "column",
-          transform: mobileOpen ? "translateX(0)" : "translateX(100%)",
-          transition: `transform 0.35s ${EASE}`,
-          pointerEvents: mobileOpen ? "auto" : "none",
-          willChange: "transform",
-        }}
-      >
+    <div
+      aria-hidden={!mobileOpen}
+      style={{
+        position: "fixed", inset: 0, zIndex: 9999,
+        isolation: "isolate",
+        backgroundColor: NAVY, color: WHITE,
+        display: "flex", flexDirection: "column",
+        transform: mobileOpen ? "translateX(0)" : "translateX(100%)",
+        transition: `transform 0.35s ${EASE}`,
+        pointerEvents: mobileOpen ? "auto" : "none",
+        willChange: "transform",
+      }}
+    >
         <div style={{
           padding: "0 clamp(1.5rem, 4vw, 2rem)",
           height: "78px", flexShrink: 0,
@@ -453,8 +456,8 @@ export function Nav() {
             fontFamily: HEAD, letterSpacing: "0.06em",
           }}>Singapore · ASEAN · India · China</p>
         </div>
-      </div>
-    </header>
+    </div>
+    </>
   );
 }
 
