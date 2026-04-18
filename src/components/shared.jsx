@@ -99,12 +99,20 @@ export function GlobalStyles() {
         /* Market cards: reduce image panel height */
         .kv-market-img { min-height: 220px !important; }
 
+        /* Path cards: tighter padding, themes always visible on touch */
+        .kv-pathcard-text { padding: 2.25rem 1.5rem !important; }
+        .kv-pathcard-themes {
+          max-height: none !important; opacity: 1 !important;
+          margin-bottom: 1.25rem !important;
+        }
+        .kv-pathcard-title { font-size: clamp(1.5rem, 5.5vw, 1.9rem) !important; }
+
         /* Parallax: disable on mobile/iOS */
         .kv-parallax { background-attachment: scroll !important; }
 
-        /* Nav: smaller logo */
-        .kv-nav { height: 72px !important; }
-        .kv-nav-logo { height: 80px !important; }
+        /* Nav: smaller logo, fits cleanly inside the bar */
+        .kv-nav { height: 64px !important; }
+        .kv-nav-logo { height: 44px !important; }
 
         /* Footer */
         footer { padding-top: 3rem !important; }
@@ -128,8 +136,8 @@ export function GlobalStyles() {
         .kv-hero { min-height: 60vh !important; }
         .kv-hero-inner { padding-top: 7rem !important; padding-bottom: 3rem !important; }
 
-        .kv-nav { height: 64px !important; }
-        .kv-nav-logo { height: 65px !important; }
+        .kv-nav { height: 60px !important; }
+        .kv-nav-logo { height: 40px !important; }
 
         .kv-footer-grid { gap: 2rem !important; }
         .kv-footer-logo { height: 40px !important; }
@@ -370,19 +378,30 @@ export function Nav() {
       {mobileOpen && (
         <div style={{
           background: WHITE, borderTop: `1px solid ${GRAY_L}`,
-          padding: "0.5rem 0 1.5rem",
+          padding: "0.5rem 0 1.25rem",
           boxShadow: "0 12px 32px rgba(0,0,0,0.08)",
+          maxHeight: "calc(100vh - 60px)", overflowY: "auto",
         }}>
           <Wrap>
-            {[...links, ["Let's meet", "/contact"]].map(([label, path]) => (
+            {links.map(([label, path], i) => (
               <Link key={label} to={path}
                 style={{
                   display: "block", padding: "16px 0", fontSize: "1rem",
                   fontWeight: 500, fontFamily: HEAD, color: TEXT_D,
-                  borderBottom: `1px solid ${GRAY_L}`,
+                  borderBottom: i < links.length - 1 ? `1px solid ${GRAY_L}` : "none",
                 }}
               >{label}</Link>
             ))}
+            <Link to="/contact"
+              style={{
+                display: "block", marginTop: "1.25rem",
+                padding: "14px 20px", textAlign: "center",
+                background: BLUE, color: WHITE,
+                borderRadius: "6px", fontSize: "0.95rem",
+                fontWeight: 600, fontFamily: HEAD,
+                letterSpacing: "0.01em",
+              }}
+            >Let's meet →</Link>
           </Wrap>
         </div>
       )}

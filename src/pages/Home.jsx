@@ -25,12 +25,12 @@ function PathCard({ to, image, label, title, subtitle, themes, side = "left" }) 
     </div>
   );
   const textSide = (
-    <div style={{
+    <div className="kv-pathcard-text" style={{
       padding: "3.5rem", backgroundColor: NAVY, color: WHITE,
       display: "flex", flexDirection: "column", justifyContent: "center",
     }}>
       <Label light>{label}</Label>
-      <h2 style={{
+      <h2 className="kv-pathcard-title" style={{
         fontFamily: HEAD, fontWeight: 300, color: WHITE,
         fontSize: "clamp(1.6rem, 2.8vw, 2.2rem)", lineHeight: 1.2,
         letterSpacing: "-0.02em", marginBottom: "1rem",
@@ -42,8 +42,8 @@ function PathCard({ to, image, label, title, subtitle, themes, side = "left" }) 
         marginBottom: "1.5rem", maxWidth: "380px",
       }}>{subtitle}</p>
 
-      {/* Sub-themes on hover */}
-      <div style={{
+      {/* Sub-themes on hover (always visible on mobile via CSS) */}
+      <div className="kv-pathcard-themes" style={{
         overflow: "hidden",
         maxHeight: hovered ? "200px" : "0",
         opacity: hovered ? 1 : 0,
