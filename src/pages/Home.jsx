@@ -77,7 +77,7 @@ function PathCard({ to, image, label, title, subtitle, themes, side = "left" }) 
       transform: hovered ? "translateY(-3px)" : "translateY(0)",
       boxShadow: hovered ? "0 20px 60px rgba(10,22,40,0.15)" : "none",
     }}
-      className="g2"
+      className="kv-pathcard-grid"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

@@ -59,8 +59,8 @@ export function GlobalStyles() {
       [data-rs].vis > [data-rc] { opacity: 1 !important; transform: translateY(0) !important; }
 
       /* Nav */
-      .dk-nav { display: none; }
-      .mb-toggle { display: flex; }
+      .dk-nav { display: none !important; }
+      .mb-toggle { display: flex !important; }
       @media(min-width:1024px) {
         .dk-nav { display: flex !important; }
         .mb-toggle { display: none !important; }
@@ -71,6 +71,7 @@ export function GlobalStyles() {
         .g2 { grid-template-columns: 1fr !important; }
         .g3 { grid-template-columns: 1fr !important; }
         .g4 { grid-template-columns: 1fr 1fr !important; }
+        .kv-pathcard-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
       }
       @media(max-width:520px) {
         .g4 { grid-template-columns: 1fr !important; }
