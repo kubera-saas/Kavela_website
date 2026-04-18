@@ -41,15 +41,15 @@ This is especially true for:
 
 ## What successful deployment looks like
 
-The funds and family offices we see succeeding in the region tend to share a few traits:
+A few traits show up consistently among funds and family offices that build sustainable positions in the region - whether they are entering from outside or already operating within it.
 
-**They start with Singapore.** Not because every deal is there, but because it's the natural hub for building regional relationships and understanding the landscape before committing to specific markets.
+**Singapore as a base for regional reach.** For many institutional investors, Singapore is where regional activity gets anchored - whether the starting point is Europe, North America, or another part of Asia. Relationships, structures, and deal flow tend to converge there.
 
-**They invest in relationships before they invest capital.** The first trip isn't about closing a deal. It's about meeting the right people, understanding local dynamics, and building the trust that leads to quality deal flow over time.
+**Relationships before capital.** The first interactions in a new market, or a new segment of an existing one, tend to prioritize meeting the right people over closing a specific deal. Quality deal flow typically follows trust, not the other way around.
 
-**They work with local partners.** Whether it's a local fund, an advisor with on-the-ground presence, or a platform that can facilitate introductions - the most effective approach combines global perspective with local access.
+**Working with local partners.** The most resilient strategies combine an investor's own perspective with on-the-ground access - through a co-investment partner, an advisor with local presence, or a platform that facilitates the right introductions.
 
-**They think in years, not quarters.** Asia rewards patience. The relationships that generate the best opportunities are the ones that have been nurtured over multiple interactions and built on mutual trust.
+**A multi-year time horizon.** Asia tends to reward patience. The networks that generate the best opportunities are usually built across multiple interactions and nurtured over cycles, not quarters.
 
 ## A window that's still open
 
