@@ -22,16 +22,16 @@ export const EASE     = "cubic-bezier(.16,1,.3,1)";
 export const MAX_W    = "1280px";
 
 /* ─── IMAGES ─── */
-const U = (id, w = 1920) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+const U = (id, w = 1280, q = 75) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
 export const IMG = {
-  heroHome:  U("photo-1525625293386-3f8f99389edd"),          // Singapore skyline MBS dusk
-  corporate: U("photo-1444723121867-7a241cacace9"),          // Singapore skyline night wide
-  funds:     U("photo-1508964942454-1a56651d54ac"),          // Singapore MBS night
-  platform:  U("photo-1517309230475-6736d926b979"),          // Hong Kong night
-  asia1:     U("photo-1540959733332-eab4deabeeaf"),          // Tokyo tower wide
-  asia2:     U("photo-1596422846543-75c6fc197f07"),          // Singapore CBD
-  asia3:     U("photo-1536098561742-ca998e48cbcc"),          // Tokyo street neon
-  asia4:     U("photo-1570168007204-dfb528c6958f"),          // Mumbai Gateway of India
+  heroHome:  U("photo-1525625293386-3f8f99389edd", 1920, 80), // Singapore skyline MBS dusk (hero - full size)
+  corporate: U("photo-1444723121867-7a241cacace9"),            // Singapore skyline night wide
+  funds:     U("photo-1508964942454-1a56651d54ac"),            // Singapore MBS night
+  platform:  U("photo-1517309230475-6736d926b979"),            // Hong Kong night
+  asia1:     U("photo-1540959733332-eab4deabeeaf"),            // Tokyo tower wide
+  asia2:     U("photo-1596422846543-75c6fc197f07"),            // Singapore CBD
+  asia3:     U("photo-1536098561742-ca998e48cbcc"),            // Tokyo street neon
+  asia4:     U("photo-1570168007204-dfb528c6958f"),            // Mumbai Gateway of India
 };
 
 /* ─── GLOBAL STYLES ─── */
