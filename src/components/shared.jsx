@@ -112,8 +112,8 @@ export function GlobalStyles() {
         .kv-parallax { background-attachment: scroll !important; }
 
         /* Nav: logo fits cleanly inside the bar */
-        .kv-nav { height: 72px !important; }
-        .kv-nav-logo { height: 60px !important; }
+        .kv-nav { height: 78px !important; }
+        .kv-nav-logo { height: 68px !important; }
 
         /* Footer */
         footer { padding-top: 3rem !important; }
@@ -137,8 +137,8 @@ export function GlobalStyles() {
         .kv-hero { min-height: 60vh !important; }
         .kv-hero-inner { padding-top: 7rem !important; padding-bottom: 3rem !important; }
 
-        .kv-nav { height: 68px !important; }
-        .kv-nav-logo { height: 54px !important; }
+        .kv-nav { height: 74px !important; }
+        .kv-nav-logo { height: 62px !important; }
 
         .kv-footer-grid { gap: 2rem !important; }
         .kv-footer-logo { height: 40px !important; }
@@ -395,12 +395,12 @@ export function Nav() {
       >
         <div style={{
           padding: "0 clamp(1.5rem, 4vw, 2rem)",
-          height: "72px", flexShrink: 0,
+          height: "78px", flexShrink: 0,
           display: "flex", alignItems: "center", justifyContent: "space-between",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}>
           <Link to="/" onClick={() => setMobileOpen(false)} style={{ display: "flex", alignItems: "center" }}>
-            <img src="/LogoKavela.png" alt="Kavela" style={{ height: "60px", width: "auto" }} />
+            <img src="/LogoKavela.png" alt="Kavela" style={{ height: "68px", width: "auto" }} />
           </Link>
           <button
             onClick={() => setMobileOpen(false)}
