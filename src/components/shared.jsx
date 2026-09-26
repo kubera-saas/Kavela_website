@@ -48,13 +48,11 @@ export function GlobalStyles() {
       [data-r] {
         opacity: 0; transform: translateY(20px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        will-change: opacity, transform;
       }
       [data-r].vis { opacity: 1 !important; transform: translateY(0) !important; }
       [data-rs] > [data-rc] {
         opacity: 0; transform: translateY(14px);
         transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        will-change: opacity, transform;
       }
       [data-rs].vis > [data-rc] { opacity: 1 !important; transform: translateY(0) !important; }
 
@@ -109,7 +107,7 @@ export function GlobalStyles() {
         .kv-pathcard-title { font-size: clamp(1.5rem, 5.5vw, 1.9rem) !important; }
 
         /* Parallax: disable on mobile/iOS */
-        .kv-parallax { background-attachment: scroll !important; }
+        .kv-parallax { height: 100% !important; transform: none !important; will-change: auto !important; }
 
         /* Nav: logo fits cleanly inside the bar */
         .kv-nav { height: 78px !important; }
@@ -195,7 +193,7 @@ export const Btn = ({ children, href, to, variant = "primary", style: s = {} }) 
     borderRadius: "6px", padding: "15px 34px",
     fontSize: "0.88rem", fontWeight: 600, fontFamily: HEAD,
     letterSpacing: "0.01em", cursor: "pointer",
-    transition: "all 0.3s ease",
+    transition: "opacity 0.3s ease",
   };
   const v = {
     primary:     { ...base, background: BLUE, color: WHITE, border: "none" },
@@ -221,16 +219,42 @@ export const Label = ({ children, light = false }) => (
 );
 
 /* ─── FULL-BLEED IMAGE BREAK ─── */
+/* Parallax via GPU transform (same look as background-attachment: fixed,
+   without repainting the whole page on every scroll frame) */
 export function ImageBreak({ image, height = "50vh", overlay = true }) {
+  const boxRef = useRef(null);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const box = boxRef.current, img = imgRef.current;
+    if (!box || !img || window.matchMedia("(max-width:768px)").matches) return;
+    let frame = 0, visible = false;
+    const update = () => {
+      frame = 0;
+      img.style.transform = `translate3d(0, ${-box.getBoundingClientRect().top}px, 0)`;
+    };
+    const onScroll = () => { if (visible && !frame) frame = requestAnimationFrame(update); };
+    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) update(); });
+    io.observe(box);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
-    <div style={{
+    <div ref={boxRef} style={{
       position: "relative", height, overflow: "hidden",
     }}>
-      <div className="kv-parallax" style={{
-        position: "absolute", inset: 0,
+      <div ref={imgRef} className="kv-parallax" style={{
+        position: "absolute", top: 0, left: 0, width: "100%", height: "100vh",
         backgroundImage: `url('${image}')`,
         backgroundSize: "cover", backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        willChange: "transform",
       }} />
       {overlay && <div style={{
         position: "absolute", inset: 0,
@@ -324,9 +348,8 @@ export function Nav() {
     <>
     <header style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-      transition: "all 0.35s ease",
+      transition: "background-color 0.35s ease, box-shadow 0.35s ease",
       backgroundColor: bg, boxShadow: shadow,
-      backdropFilter: solid ? "blur(12px)" : "none",
     }}>
       <Wrap>
         <nav className="kv-nav" style={{
