@@ -1,25 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { BLUE, NAVY, WHITE, TEXT_D, HEAD, BODY, EASE, MAX_W } from "../brand/tokens";
+import { useReveal } from "../brand/reveal";
 
 /* ═══════════════════════════════════════════
    KAVELA - DESIGN SYSTEM v3
    Premium. Cinematic. Understated confidence.
    ═══════════════════════════════════════════ */
 
-/* ─── TOKENS ─── */
-export const BLUE     = "#1A3D7C";
-export const BLUE_D   = "#0E2A5C";
-export const BLUE_L   = "#2A5BA8";
-export const NAVY     = "#0A1628";
-export const WHITE    = "#FFFFFF";
-export const OFF_W    = "#F5F6F8";
-export const GRAY     = "#6B7280";
-export const GRAY_L   = "#E5E7EB";
-export const TEXT_D   = "#0F172A";
-export const HEAD     = "'Inter Tight', 'Inter', system-ui, sans-serif";
-export const BODY     = "'Inter', system-ui, sans-serif";
-export const EASE     = "cubic-bezier(.16,1,.3,1)";
-export const MAX_W    = "1280px";
+/* ─── TOKENS (source: src/brand/tokens.js) ─── */
+export { BLUE, BLUE_D, BLUE_L, NAVY, WHITE, OFF_W, GRAY, GRAY_L, TEXT_D, HEAD, BODY, EASE, MAX_W } from "../brand/tokens";
+export { useReveal };
 
 /* ─── IMAGES ─── */
 const U = (id, w = 1280, q = 75) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
@@ -150,26 +141,6 @@ export function GlobalStyles() {
 }
 
 /* ─── REVEAL ─── */
-export function useReveal(ref) {
-  useEffect(() => {
-    const root = ref?.current || document;
-    const els = [...root.querySelectorAll("[data-r],[data-rs]")];
-    if (!els.length) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add("vis");
-        [...e.target.querySelectorAll("[data-rc]")].forEach((c, i) => {
-          c.style.transitionDelay = `${i * 120}ms`;
-        });
-        io.unobserve(e.target);
-      });
-    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, [ref]);
-}
-
 export function RevealEngine({ children }) {
   const ref = useRef(null);
   useReveal(ref);
@@ -477,7 +448,7 @@ export function Nav() {
             marginTop: "1.25rem", textAlign: "center",
             fontSize: "0.78rem", color: "rgba(255,255,255,0.3)",
             fontFamily: HEAD, letterSpacing: "0.06em",
-          }}>Singapore · ASEAN · India · China</p>
+          }}>Singapore · SEA · India · China</p>
         </div>
     </div>
     </>
@@ -521,7 +492,7 @@ export function Footer() {
 
           <div>
             <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "rgba(255,255,255,0.2)", fontWeight: 600, fontFamily: HEAD, marginBottom: "1.75rem" }}>Connect</p>
-            <a href="mailto:contact@kavela.co" style={lk} onMouseEnter={h} onMouseLeave={l}>contact@kavela.co</a>
+            <Link to="/contact" style={lk} onMouseEnter={h} onMouseLeave={l}>Contact form</Link>
             <a href="https://www.linkedin.com/company/kavelagroup/" target="_blank" rel="noreferrer" style={lk} onMouseEnter={h} onMouseLeave={l}>LinkedIn</a>
           </div>
 
@@ -531,7 +502,7 @@ export function Footer() {
               Singapore
             </p>
             <p style={{ fontSize: "0.82rem", lineHeight: 1.7, color: "rgba(255,255,255,0.25)", marginTop: "0.35rem" }}>
-              ASEAN · India · China
+              SEA · India · China
             </p>
           </div>
         </div>

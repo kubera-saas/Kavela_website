@@ -17,7 +17,7 @@ The region's economies are growing steadily. A young, digitally connected popula
 
 But the opportunity isn't as simple as "deploy capital in Asia." The specifics matter enormously.
 
-## What makes ASEAN different
+## What makes Southeast Asia different
 
 Southeast Asia isn't one market. It's a collection of very different economies - each with its own regulatory framework, business culture, and competitive landscape.
 
@@ -25,7 +25,7 @@ Singapore functions as the region's financial hub. Most institutional investors 
 
 Beyond Singapore, the opportunity set varies widely. Some markets offer scale. Others offer speed. Some are mature enough for growth-stage deployment, while others are still in the venture and early-growth phase.
 
-The point is: a thesis that works in one ASEAN market may not translate to the next. Local context is everything.
+The point is: a thesis that works in one Southeast Asian market may not translate to the next. Local context is everything.
 
 ## The real barrier to entry
 

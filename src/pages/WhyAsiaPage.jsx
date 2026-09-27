@@ -114,7 +114,7 @@ export default function WhyAsiaPage() {
                   The opportunities are real, but so is the complexity.
                 </p>
                 <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: GRAY }}>
-                  The key to ASEAN is knowing which market fits your product - and knowing
+                  The key to Southeast Asia is knowing which market fits your product - and knowing
                   the distributor who controls that vertical.
                 </p>
               </div>

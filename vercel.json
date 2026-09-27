@@ -1,5 +1,14 @@
 {
+  "routes": [
+    { "src": "/", "has": [{ "type": "host", "value": "healthcare.kavela.co" }], "dest": "/healthcare.html" },
+    { "src": "/sitemap.xml", "has": [{ "type": "host", "value": "healthcare.kavela.co" }], "dest": "/healthcare-sitemap.xml" },
+    { "src": "/robots.txt", "has": [{ "type": "host", "value": "healthcare.kavela.co" }], "dest": "/healthcare-robots.txt" }
+  ],
+  "redirects": [
+    { "source": "/healthcare", "has": [{ "type": "host", "value": "(www\\.)?kavela\\.co" }], "destination": "https://healthcare.kavela.co/", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "has": [{ "type": "host", "value": "healthcare.kavela.co" }], "destination": "/healthcare.html" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

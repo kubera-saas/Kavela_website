@@ -3,6 +3,7 @@ import {
   HEAD, BODY, IMG,
   RevealEngine, Wrap, Btn, Label,
 } from "../components/shared";
+import ContactForm, { ContactFormStyles } from "../brand/ContactForm";
 
 export default function ContactPage() {
   return (
@@ -63,27 +64,15 @@ export default function ContactPage() {
                 we'd like to hear from you.
               </h2>
 
-              {/* Email */}
-              <a href="mailto:contact@kavela.co" style={{
-                display: "flex", alignItems: "center", gap: "1.25rem",
-                padding: "1.75rem", borderRadius: "12px",
-                border: `1px solid ${GRAY_L}`, marginBottom: "1rem",
-                transition: "border-color 0.25s, box-shadow 0.25s",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = BLUE; e.currentTarget.style.boxShadow = `0 4px 20px ${BLUE}10`; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = GRAY_L; e.currentTarget.style.boxShadow = "none"; }}
-              >
-                <div style={{
-                  width: "52px", height: "52px", borderRadius: "12px",
-                  backgroundColor: `${BLUE}08`, display: "flex",
-                  alignItems: "center", justifyContent: "center",
-                  fontSize: "1.3rem", flexShrink: 0,
-                }}>✉</div>
-                <div>
-                  <p style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.15em", color: GRAY, fontFamily: HEAD, fontWeight: 600, marginBottom: "0.3rem" }}>Email</p>
-                  <p style={{ fontSize: "1rem", color: BLUE, fontWeight: 600 }}>contact@kavela.co</p>
-                </div>
-              </a>
+              {/* Form */}
+              <ContactFormStyles />
+              <div style={{ marginBottom: "2rem" }}>
+                <ContactForm
+                  form="contact"
+                  site="main"
+                  palette={{ text: TEXT_D, muted: GRAY, line: GRAY_L, field: "transparent", accent: BLUE, accentText: WHITE, error: "#B42318" }}
+                />
+              </div>
 
               {/* LinkedIn */}
               <a href="https://www.linkedin.com/company/kavelagroup/" target="_blank" rel="noreferrer" style={{
