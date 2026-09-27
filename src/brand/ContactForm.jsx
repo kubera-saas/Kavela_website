@@ -34,7 +34,7 @@ export default function ContactForm({
   palette,
   submitLabel = "Send",
   successTitle = "Thank you.",
-  successText = "Your message has been received. We will reply personally.",
+  successText = "Your message has been received and will be answered personally.",
   inline = false,
   profiles,           // optional list: adds a "You are" dropdown to the contact form
 }) {

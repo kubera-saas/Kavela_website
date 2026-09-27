@@ -113,7 +113,6 @@ p { line-height: 1.7; }
 .kh-steps { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
 .kh-steps li { padding-top: 2.25rem; position: relative; }
 .kh-steps-node { position: absolute; top: 0; left: 0; width: 13px; height: 13px; border-radius: 50%; background: #FFFFFF; border: 1.5px solid var(--ink); }
-.kh-steps li:last-child .kh-steps-node { background: var(--ink); }
 .kh-steps h3 { font-size: 1.6rem; font-weight: 400; margin-bottom: .75rem; }
 .kh-steps p { font-size: 1rem; color: var(--muted); max-width: 24rem; }
 

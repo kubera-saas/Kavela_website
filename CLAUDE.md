@@ -40,6 +40,7 @@ Vercel (auto-deploy sur push `main`). Domaine: kavela.co.
 - **Aucun chiffre attaquable**: pas de stats, pourcentages, comparaisons quantifiées. Langage évocateur non-quantifié.
 - **Pas d'em-dashes (—)**: tirets simples (-) uniquement.
 - **Jamais "ASEAN"** (institution politique). Toujours la géographie: "Southeast Asia" dans les phrases, "SEA" dans les listes courtes.
+- **Pas de "we / our / us"**: formulations impersonnelles et seniores ("KAVELA Healthcare works with...", "The practice does not..."). Titres de section seniors ("Practice areas", pas "What we do").
 - **Pas de "tics" qui font texte généré**: éviter les séparateurs "·", les tirets au milieu des phrases, les surtitres en majuscules espacées, les numérotations décoratives (01, 02), les puces et chevrons décoratifs. Phrases simples, peu de texte.
 - **Logos**: ne jamais inventer ou assembler un logo sans validation. Site Healthcare: jeu "Eau" de `public/Healthcare/Eau/` (validé). Bibliothèque KAVELA officielle: Drive > 03_Marque & assets > 02_Visual identity (copies web dans `public/brand/`).
 - **Couleurs**: le logo porte la couleur. Le reste reste sobre. Healthcare: encre #0E2431, blanc, gris clair, vert Eau #235F5C en accent discret.
