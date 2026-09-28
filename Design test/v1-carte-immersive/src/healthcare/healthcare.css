@@ -1,0 +1,219 @@
+/* KAVELA HEALTHCARE - layout
+   Palette of the "Eau" logo set (injected from src/brand/tokens.js in main.jsx):
+   ink for dark bands, white and light grey elsewhere, Eau green as a discreet accent.
+   Top of page = story over a pinned map (.kh-story); the map reacts to .stage-N. */
+
+:root { --nav-h: 84px; --line: #E1E5E9; --line-dark: rgba(255,255,255,.14); }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--body); color: var(--ink); background: #FFFFFF; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--eau); outline-offset: 3px; }
+
+.kh-wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.kh-skip { position: absolute; left: -9999px; top: 0; z-index: 200; background: #FFFFFF; color: var(--ink); padding: 12px 18px; }
+.kh-skip:focus { left: 12px; top: 12px; }
+
+/* Reveal on scroll */
+[data-r] { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+[data-r].vis { opacity: 1; transform: none; }
+[data-rs] > [data-rc] { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+[data-rs].vis > [data-rc] { opacity: 1; transform: none; }
+
+/* Type: large and confident */
+h1, h2, h3, h4 { font-family: var(--head); letter-spacing: -0.025em; color: var(--ink); }
+h2 { font-size: clamp(2.2rem, 4.4vw, 4rem); font-weight: 300; line-height: 1.04; margin-bottom: 1.25rem; }
+h3 { font-size: 1.3rem; font-weight: 500; line-height: 1.3; letter-spacing: -0.015em; }
+h4 { font-size: 1.05rem; font-weight: 500; letter-spacing: -0.01em; }
+p { line-height: 1.7; }
+
+/* Buttons */
+.kh-btn { display: inline-block; font-family: var(--head); font-size: .92rem; font-weight: 600; border-radius: 6px; padding: 15px 30px; transition: opacity .3s, background-color .3s, color .3s; }
+.kh-btn:hover { opacity: .85; }
+.kh-btn-white { background: #FFFFFF; color: var(--ink); }
+
+/* Nav */
+.kh-nav { position: fixed; inset: 0 0 auto 0; z-index: 100; transition: background-color .35s, box-shadow .35s; }
+.kh-nav.is-solid { background: rgba(255,255,255,.97); box-shadow: 0 1px 0 var(--line); }
+.kh-nav-inner { height: var(--nav-h); display: flex; align-items: center; gap: 2.5rem; }
+.kh-nav-logo { margin-right: auto; }
+/* Sized so that "KAVELA" matches kavela.co (about 17px high). In the horizontal logo the wordmark is 43% of the height. */
+.kh-nav-logo img { height: 39px; width: auto; }
+.kh-nav-links { display: flex; gap: 2.25rem; }
+.kh-nav-links a { font-family: var(--head); font-size: .9rem; font-weight: 500; color: rgba(255,255,255,.72); transition: color .25s; }
+.kh-nav-links a:hover { color: #FFFFFF; }
+.kh-nav.is-solid .kh-nav-links a { color: rgba(14,36,49,.62); }
+.kh-nav.is-solid .kh-nav-links a:hover { color: var(--ink); }
+.kh-btn-nav { padding: 10px 22px; font-size: .85rem; background: #FFFFFF; color: var(--ink); }
+.kh-nav.is-solid .kh-btn-nav { background: var(--ink); color: #FFFFFF; }
+
+/* ═══ Story over the pinned map ═══ */
+/* clip-path keeps the pinned map inside the story without breaking "sticky" (overflow: hidden would) */
+.kh-story { position: relative; background: var(--ink); color: #FFFFFF; clip-path: inset(0); }
+.kh-story-map { position: sticky; top: 0; height: 100vh; height: 100svh; margin-bottom: -100vh; margin-bottom: -100svh; overflow: hidden; pointer-events: none; }
+.kh-story-map::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1.2px); background-size: 28px 28px; mask-image: radial-gradient(ellipse 50% 65% at 72% 52%, #000 25%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 50% 65% at 72% 52%, #000 25%, transparent 75%); }
+.kh-story-map-inner { position: absolute; top: 50%; right: max(var(--gutter), calc((100vw - var(--maxw)) / 2 + var(--gutter))); width: min(50vw, 660px); transform: translateY(-46%); }
+.kh-panel { position: relative; z-index: 1; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+.kh-panel-body { width: 44%; }
+.kh-panel-hero .kh-panel-body { width: 48%; padding-top: var(--nav-h); }
+.kh-story h1 { font-size: clamp(2.6rem, 5vw, 5rem); font-weight: 300; line-height: 1.02; color: #FFFFFF; margin-bottom: 1.75rem; }
+.kh-hero-text { font-size: 1.15rem; font-weight: 300; color: rgba(255,255,255,.7); max-width: 28rem; margin-bottom: 2.5rem; }
+.kh-story h2 { color: #FFFFFF; font-size: clamp(2.4rem, 4.8vw, 4.6rem); margin-bottom: 1.5rem; }
+.kh-kicker { font-family: var(--head); font-size: 1rem; font-weight: 500; color: var(--eau-l); margin-bottom: 1.25rem; }
+.kh-panel-text { font-size: 1.2rem; font-weight: 300; color: rgba(255,255,255,.74); max-width: 30rem; }
+.kh-panel-note { margin-top: 2.25rem; padding-top: 1.1rem; border-top: 1px solid var(--line-dark); font-size: .92rem; color: rgba(255,255,255,.5); max-width: 30rem; }
+
+/* Map */
+.kh-map { width: 100%; height: auto; display: block; overflow: visible; }
+.kh-map-label { font-family: var(--head); font-size: 15px; fill: rgba(247,244,236,.8); transition: opacity .8s; }
+.kh-map-sg { font-family: var(--head); font-size: 19px; font-weight: 600; fill: var(--cream); }
+.kh-map-coord { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12px; fill: rgba(127,193,184,.85); }
+.kh-map-far { font-family: var(--head); font-size: 14px; fill: rgba(247,244,236,.55); }
+.kh-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: kh-draw 1.6s var(--ease) forwards; }
+.kh-ring { transform-box: fill-box; transform-origin: center; opacity: 0; animation: kh-ring 4s ease-out 1.2s infinite; }
+@keyframes kh-draw { to { stroke-dashoffset: 0; } }
+@keyframes kh-ring { 0% { opacity: .8; transform: scale(1); } 80%, 100% { opacity: 0; transform: scale(3.2); } }
+
+/* Map stages: 0 hero, 1 market, 2 intelligence, 3 access, 4 execution */
+.kh-m-rings { opacity: .06; transition: opacity .8s; }
+.kh-m-sweep { opacity: 0; transform-box: view-box; transform-origin: 280px 300px; animation: kh-sweep 4.5s linear infinite; transition: opacity .8s; }
+.kh-m-link { stroke: var(--cream); stroke-opacity: .2; stroke-width: 1; transition: stroke .8s, stroke-opacity .8s, stroke-width .8s; }
+.kh-m-halo { stroke-opacity: .2; transform-box: fill-box; transform-origin: center; transition: stroke .6s; }
+.kh-m-far { opacity: .55; transition: opacity .8s; }
+.kh-m-pulses { opacity: 0; transition: opacity .8s; }
+.stage-0 .kh-map-label { opacity: .55; }
+.stage-1 .kh-m-halo { stroke: var(--eau-l); animation: kh-halo 2.6s ease-out infinite; animation-delay: calc(var(--i) * .5s); }
+.stage-2 .kh-m-rings { opacity: .16; }
+.stage-2 .kh-m-sweep { opacity: 1; }
+.stage-3 .kh-m-link { stroke-opacity: .65; stroke-width: 1.3; }
+.stage-4 .kh-m-link { stroke: var(--eau-l); stroke-opacity: .9; stroke-width: 1.7; }
+.stage-4 .kh-m-pulses { opacity: 1; }
+.stage-4 .kh-m-far { opacity: 1; }
+@keyframes kh-halo { 0% { transform: scale(1); stroke-opacity: .9; } 100% { transform: scale(3); stroke-opacity: 0; } }
+@keyframes kh-sweep { to { transform: rotate(-360deg); } }
+
+/* ═══ Sections ═══ */
+.kh-section { padding: clamp(5.5rem, 10vw, 9rem) 0; background: #FFFFFF; }
+.kh-grey { background: var(--grey); }
+.kh-dark { background: var(--ink); color: #FFFFFF; }
+.kh-dark h2, .kh-dark h3 { color: #FFFFFF; }
+.kh-intro { max-width: 44rem; margin-bottom: clamp(3rem, 5vw, 4.5rem); }
+.kh-intro p { font-size: 1.15rem; color: var(--muted); }
+
+/* Practice areas */
+.kh-services { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+.kh-service { background: #FFFFFF; border: 1px solid var(--line); border-top: 3px solid var(--eau); border-radius: 4px; padding: 2.5rem; }
+.kh-service header { margin-bottom: 1.75rem; }
+.kh-service header h3 { font-size: 1.7rem; font-weight: 400; margin-bottom: .4rem; }
+.kh-service header p { font-size: .95rem; color: var(--muted); }
+.kh-service li { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+.kh-service li p { font-size: .97rem; color: var(--muted); margin-top: .3rem; }
+
+/* Ecosystem */
+.kh-eco { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.kh-eco-visual { width: 100%; height: auto; display: block; }
+.kh-eco-list { border-top: 1px solid var(--line); }
+.kh-eco-list > li { border-bottom: 1px solid var(--line); }
+.kh-eco-list button { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; padding: 1rem 0; font-family: var(--head); font-size: 1.08rem; font-weight: 500; color: rgba(14,36,49,.6); transition: color .25s; }
+.kh-eco-list button:hover, .kh-eco-list li.is-open button { color: var(--ink); }
+.kh-eco-list button:focus-visible { outline: 2px solid var(--eau); outline-offset: 2px; }
+.kh-eco-detail { padding-bottom: 1.25rem; }
+.kh-eco-detail p { font-size: .95rem; color: var(--muted); }
+.kh-eco-meets { margin-top: .75rem; color: var(--ink) !important; }
+
+/* Intelligence */
+.kh-intel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 3rem 5rem; align-items: end; }
+.kh-intel-text { font-size: 1.15rem; color: rgba(255,255,255,.68); max-width: 34rem; }
+.kh-topics { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.kh-topics li { font-family: var(--head); font-size: .85rem; font-weight: 500; color: rgba(255,255,255,.85); border: 1px solid rgba(127,193,184,.4); border-radius: 999px; padding: .5rem 1rem; }
+.kh-brief { border: 1px solid var(--line-dark); border-radius: 4px; padding: 2.25rem; }
+.kh-brief h3 { font-size: 1.5rem; font-weight: 400; margin-bottom: .35rem; }
+.kh-brief > p { color: rgba(255,255,255,.6); margin-bottom: 1.5rem; }
+
+/* Contact */
+.kh-contact { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 5rem; align-items: start; }
+.kh-contact p { font-size: 1.15rem; color: var(--muted); max-width: 28rem; }
+
+/* Footer */
+.kh-footer { background: var(--ink); color: rgba(255,255,255,.6); padding: 3.5rem 0 2.5rem; font-size: .9rem; }
+.kh-footer-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
+.kh-footer-logo { height: 55px; width: auto; margin-bottom: 1rem; }
+.kh-footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.kh-footer-links a { color: #FFFFFF; transition: opacity .25s; }
+.kh-footer-links a:hover { opacity: .7; }
+
+/* ═══ Tablet ═══ */
+@media (max-width: 1100px) { .kh-nav-links { display: none; } }
+@media (max-width: 1024px) {
+  .kh-services, .kh-intel, .kh-contact { grid-template-columns: 1fr; gap: 2rem; }
+  .kh-eco { grid-template-columns: 1fr; gap: 2.5rem; }
+  .kh-eco-visual { max-width: 600px; margin: 0 auto; }
+}
+
+/* ═══ Phone: map pinned at the top, text underneath ═══ */
+@media (max-width: 768px) {
+  :root { --nav-h: 70px; }
+  .kh-nav-logo img { height: 23px; /* kavela.co: wordmark about 10px */ }
+
+  .kh-story-map::before { mask-image: radial-gradient(ellipse 80% 40% at 50% 30%, #000 25%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 80% 40% at 50% 30%, #000 25%, transparent 75%); }
+  .kh-story-map-inner { top: calc(var(--nav-h) + .5rem); right: auto; left: 50%; width: min(90vw, 400px); transform: translateX(-50%); }
+  .kh-panel { min-height: 100svh; align-items: flex-end; padding-bottom: 2.5rem; }
+  .kh-panel-body, .kh-panel-hero .kh-panel-body { width: 100%; padding-top: 2.5rem; background: linear-gradient(to top, var(--ink) 70%, rgba(14,36,49,0)); }
+  .kh-panel-hero { min-height: 100svh; }
+  .kh-story h1 { font-size: clamp(2rem, 8.6vw, 2.5rem); margin-bottom: 1rem; }
+  .kh-hero-text { font-size: 1rem; margin-bottom: 1.5rem; }
+  .kh-story .kh-btn { width: 100%; text-align: center; }
+  .kh-story h2 { font-size: 2.1rem; margin-bottom: .75rem; }
+  .kh-kicker { font-size: .9rem; margin-bottom: .6rem; }
+  .kh-panel-text { font-size: 1rem; }
+  .kh-panel-note { margin-top: 1.25rem; font-size: .85rem; }
+  .kh-map-label { font-size: 22px; }
+  .kh-map-sg { font-size: 26px; }
+  .kh-map-coord { font-size: 17px; }
+  .kh-map-far { font-size: 20px; }
+
+  .kh-section { padding: 3.75rem 0; }
+  h2 { font-size: 2rem; margin-bottom: .85rem; }
+  .kh-intro { margin-bottom: 2rem; }
+  .kh-intro p, .kh-contact p, .kh-intel-text { font-size: 1rem; }
+
+  .kh-services { gap: 1rem; margin-top: 1.5rem; }
+  .kh-service { padding: 1.4rem 1.25rem; }
+  .kh-service header { margin-bottom: .75rem; }
+  .kh-service header h3 { font-size: 1.3rem; }
+  .kh-service header p { font-size: .88rem; }
+  .kh-service li { padding: .7rem 0; }
+  .kh-service li p { display: none; }
+
+  .kh-eco { gap: 1.25rem; }
+  .kh-eco-visual { max-width: 340px; }
+  .kh-eco-meets { display: none; }
+  .kh-eco-list button { padding: .8rem 0; font-size: 1rem; }
+
+  .kh-topics { margin-top: 1.25rem; }
+  .kh-brief { padding: 1.4rem 1.25rem; }
+  .kh-brief h3 { font-size: 1.25rem; }
+
+  .kh-contact .kv-field-organisation { display: none; }
+  .kh-contact .kv-form-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+
+  .kh-footer { padding: 2.5rem 0 2rem; }
+  .kh-footer-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .kh-footer-logo { height: 42px; }
+}
+@media (max-width: 480px) {
+  .kh-nav-logo img { height: 22px; /* kavela.co: wordmark about 9.5px */ }
+  .kh-btn-nav { padding: 9px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-r], [data-rs] > [data-rc] { opacity: 1; transform: none; transition: none; }
+  .kh-draw { animation: none; stroke-dashoffset: 0; }
+  .kh-ring, .kh-pulse, .kh-m-sweep { display: none; }
+  .stage-1 .kh-m-halo { animation: none; stroke-opacity: .8; }
+}

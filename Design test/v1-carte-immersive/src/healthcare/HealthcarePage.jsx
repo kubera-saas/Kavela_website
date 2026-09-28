@@ -5,11 +5,12 @@ import ContactForm, { ContactFormStyles } from "../brand/ContactForm";
 import SignalMap from "./SignalMap";
 import EcosystemMap from "./EcosystemMap";
 import {
-  NAV, HERO, FACTS, OVERVIEW, SERVICES, APPROACH, ECOSYSTEM, INTELLIGENCE, CONTACT, FOOTER, LINKEDIN, PARENT,
+  NAV, HERO, STORY, SERVICES, ECOSYSTEM, INTELLIGENCE, CONTACT, FOOTER, LINKEDIN, PARENT,
 } from "./content";
 
 /* KAVELA HEALTHCARE - healthcare.kavela.co
-   Logos: KAVELA Healthcare "Eau" set (public/Healthcare/Eau). Layout: healthcare.css. */
+   Top of page: a story told over the pinned signal map (the map follows the scroll).
+   Logos: KAVELA Healthcare "Eau" set (public/Healthcare). Layout: healthcare.css. */
 
 const LOGO = {
   dark: "/Healthcare/Eau/kavela-healthcare-eau-complet-fonce.svg",
@@ -17,20 +18,22 @@ const LOGO = {
 };
 
 /* Header logo: horizontal version ("HEALTHCARE" on the right), built from the Eau
-   pieces by kavela-healthcare/build-logo-horizontal.mjs. To go back to the stacked
-   official lockup, set NAV_LOGO = LOGO and restore the heights in healthcare.css. */
+   pieces by kavela-healthcare/build-logo-horizontal.mjs. */
 const NAV_LOGO = {
   dark: "/Healthcare/Eau-horizontal/kavela-healthcare-eau-horizontal-fonce.svg",
   light: "/Healthcare/Eau-horizontal/kavela-healthcare-eau-horizontal-clair.svg",
 };
 
+/* Transparent over the dark story, white once the story has scrolled away */
 function Nav() {
   const [solid, setSolid] = useState(false);
   useEffect(() => {
-    const on = () => setSolid(window.scrollY > 24);
+    const story = document.querySelector(".kh-story");
+    const on = () => setSolid(!!story && story.getBoundingClientRect().bottom < 90);
     on();
     window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
+    window.addEventListener("resize", on, { passive: true });
+    return () => { window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
   }, []);
   return (
     <header className={`kh-nav${solid ? " is-solid" : ""}`}>
@@ -47,9 +50,25 @@ function Nav() {
   );
 }
 
+/* Which story panel sits in the middle of the screen → map stage */
+function useStage(ref) {
+  const [stage, setStage] = useState(0);
+  useEffect(() => {
+    const panels = ref.current?.querySelectorAll("[data-stage]") || [];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) setStage(Number(e.target.dataset.stage)); });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    panels.forEach((p) => io.observe(p));
+    return () => io.disconnect();
+  }, [ref]);
+  return stage;
+}
+
 export default function HealthcarePage() {
   const ref = useRef(null);
+  const storyRef = useRef(null);
   useReveal(ref);
+  const stage = useStage(storyRef);
   const light = { text: INK, muted: KV_MUTED, line: "#D3D8DD", field: "transparent", accent: INK, accentText: "#FFFFFF", accentLine: EAU, error: "#B42318" };
   const dark = { text: "#FFFFFF", muted: "rgba(255,255,255,.6)", line: "rgba(255,255,255,.3)", field: "transparent", accent: "#FFFFFF", accentText: INK, accentLine: "#7FC1B8", error: "#F2A08F" };
 
@@ -60,65 +79,35 @@ export default function HealthcarePage() {
       <ContactFormStyles />
 
       <main id="main">
-        {/* Hero */}
-        <section id="top" className="kh-hero">
-          <div className="kh-wrap kh-hero-grid">
-            <div>
-              <h1>{HERO.title}</h1>
-              <p className="kh-hero-text">{HERO.text}</p>
-              <div className="kh-hero-ctas">
+        {/* Story over the pinned map */}
+        <section id="top" className="kh-story" ref={storyRef} aria-label="KAVELA Healthcare">
+          <div className="kh-story-map" aria-hidden="true">
+            <div className="kh-story-map-inner"><SignalMap stage={stage} /></div>
+          </div>
+
+          <div className="kh-wrap">
+            <div className="kh-panel kh-panel-hero" data-stage="0">
+              <div className="kh-panel-body">
+                <h1>{HERO.title}</h1>
+                <p className="kh-hero-text">{HERO.text}</p>
                 <a href="#contact" className="kh-btn kh-btn-white">{HERO.cta}</a>
-                <a href="#services" className="kh-btn kh-btn-ghost kh-desktop">{HERO.secondary}</a>
               </div>
             </div>
-            <div className="kh-hero-visual"><SignalMap /></div>
-          </div>
-        </section>
 
-        {/* Key facts */}
-        <section className="kh-facts" aria-label="Key facts">
-          <dl className="kh-wrap kh-facts-grid">
-            {FACTS.map(([k, v]) => (
-              <div key={k}><dt>{k}</dt><dd>{v}</dd></div>
+            {STORY.map((p) => (
+              <div key={p.title} id={p.id} className="kh-panel" data-stage={p.stage}>
+                <div className="kh-panel-body" data-r>
+                  {p.kicker && <p className="kh-kicker">{p.kicker}</p>}
+                  <h2>{p.title}</h2>
+                  <p className="kh-panel-text">{p.text}</p>
+                  {p.note && <p className="kh-panel-note">{p.note}</p>}
+                </div>
+              </div>
             ))}
-          </dl>
-        </section>
-
-        {/* Overview */}
-        <section className="kh-section" aria-labelledby="kh-overview">
-          <div className="kh-wrap kh-overview" data-r>
-            <h2 id="kh-overview">{OVERVIEW.title}</h2>
-            <div>
-              {OVERVIEW.text.map((t, i) => <p key={t} className={i > 0 ? "kh-desktop" : undefined}>{t}</p>)}
-              <p className="kh-small">{OVERVIEW.note}</p>
-            </div>
           </div>
         </section>
 
-        {/* Engagement model: mandate → business development → relationship → closing */}
-        <section id="approach" className="kh-section kh-grey" aria-labelledby="kh-approach">
-          <div className="kh-wrap">
-            <div className="kh-intro" data-r>
-              <h2 id="kh-approach">{APPROACH.title}</h2>
-              <p>{APPROACH.text}</p>
-            </div>
-            <div className="kh-steps-wrap">
-              <span className="kh-steps-signal" aria-hidden="true" />
-              <ol className="kh-steps" data-rs>
-                {APPROACH.steps.map(([name, text, short]) => (
-                  <li key={name} data-rc>
-                    <span className="kh-steps-node" aria-hidden="true" />
-                    <h3>{name}</h3>
-                    <p className="kh-desktop">{text}</p>
-                    <p className="kh-phone">{short}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* Services */}
+        {/* Practice areas */}
         <section id="services" className="kh-section" aria-labelledby="kh-services">
           <div className="kh-wrap">
             <h2 id="kh-services" data-r>{SERVICES.title}</h2>
@@ -153,21 +142,17 @@ export default function HealthcarePage() {
 
         {/* Intelligence */}
         <section id="intelligence" className="kh-section kh-dark" aria-labelledby="kh-intel">
-          <div className="kh-wrap">
-            <div className="kh-intro" data-r>
+          <div className="kh-wrap kh-intel">
+            <div data-r>
               <h2 id="kh-intel">{INTELLIGENCE.title}</h2>
-              <p>{INTELLIGENCE.text}</p>
-            </div>
-            <div className="kh-topics" data-rs>
-              {INTELLIGENCE.topics.map(([name, text]) => (
-                <div key={name} data-rc><h3>{name}</h3><p>{text}</p></div>
-              ))}
+              <p className="kh-intel-text">{INTELLIGENCE.text}</p>
+              <ul className="kh-topics">
+                {INTELLIGENCE.topics.map((t) => <li key={t}>{t}</li>)}
+              </ul>
             </div>
             <div className="kh-brief" data-r>
-              <div>
-                <h3>{INTELLIGENCE.formTitle}</h3>
-                <p>{INTELLIGENCE.formText}</p>
-              </div>
+              <h3>{INTELLIGENCE.formTitle}</h3>
+              <p>{INTELLIGENCE.formText}</p>
               <ContactForm form="brief" site="healthcare" inline submitLabel="Subscribe" palette={dark}
                 successTitle="Thank you." successText="The first edition will be sent to this address." />
             </div>
@@ -189,30 +174,15 @@ export default function HealthcarePage() {
       </main>
 
       <footer className="kh-footer">
-        <div className="kh-wrap">
-          <div className="kh-footer-grid">
-            <div>
-              <img src={LOGO.dark} alt="KAVELA Healthcare" width="286" height="55" className="kh-footer-logo" />
-              <p>{FOOTER.about}</p>
-            </div>
-            <div className="kh-desktop">
-              <h4>Healthcare</h4>
-              {NAV.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
-              <a href="#contact">Contact</a>
-            </div>
-            <div>
-              <h4>KAVELA</h4>
-              <a href={PARENT}>kavela.co</a>
-              <a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-            <div>
-              <h4>Singapore</h4>
-              <p>{FOOTER.reach}</p>
-            </div>
+        <div className="kh-wrap kh-footer-inner">
+          <div>
+            <img src={LOGO.dark} alt="KAVELA Healthcare" width="286" height="55" className="kh-footer-logo" />
+            <p>{FOOTER.about}</p>
           </div>
-          <div className="kh-footer-bottom">
-            <p>© {new Date().getFullYear()} KAVELA</p>
-            <p>{FOOTER.disclaimer}</p>
+          <div className="kh-footer-links">
+            <a href={PARENT}>kavela.co</a>
+            <a href={LINKEDIN} target="_blank" rel="noreferrer">LinkedIn</a>
+            <span>© {new Date().getFullYear()} KAVELA</span>
           </div>
         </div>
       </footer>

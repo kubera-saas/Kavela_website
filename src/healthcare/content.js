@@ -3,8 +3,8 @@
    no dot separators, no dashes inside sentences. */
 
 export const NAV = [
-  ["Services", "#services"],
   ["Approach", "#approach"],
+  ["Services", "#services"],
   ["Ecosystem", "#ecosystem"],
   ["Intelligence", "#intelligence"],
 ];
@@ -56,28 +56,30 @@ export const SERVICES = {
   ],
 };
 
+/* Engagement model, shown near the top of the page */
 export const APPROACH = {
-  title: "From signal to execution.",
-  text: "Three disciplines, applied to one defined objective at a time.",
+  title: "From mandate to closing.",
+  text: "One engagement, carried by the same team from the first discussion to the final agreement.",
   /* [name, full text (computer), short text (phone)] */
   steps: [
-    ["Intelligence", "Transactions, regulation, hospital projects and capital movements across the region, translated into a clear view of who matters for a given objective.", "Market, players and signals, mapped against a defined objective."],
-    ["Access", "Identification and qualification of the right counterparties, with senior introductions briefed on both sides. An introduction is a step, not the end product.", "Senior introductions to qualified counterparties, briefed on both sides."],
-    ["Execution", "Continued involvement as relationships turn into pilots, partnerships or transactions, alongside local partners, until a decision is made.", "Involvement through to a partnership, a pilot or a transaction."],
+    ["Mandate", "KAVELA Healthcare partners with a client or partner around a defined objective: a market to enter, a partner to find, an opportunity to source.", "A defined objective, agreed with the client."],
+    ["Business development", "Research, identification and qualification of the right partners, followed by senior outreach on the client's behalf.", "The right partners identified, qualified and approached."],
+    ["Relationship", "Coordination between the client and each counterparty, so that discussions move forward smoothly on both sides.", "Smooth, well-prepared discussions on both sides."],
+    ["Closing", "Continued involvement through negotiation, until the agreement is reached.", "Involvement until the agreement is reached."],
   ],
 };
 
 /* Ecosystem map: order = position around the circle, clockwise from the top */
 export const ECOSYSTEM = {
   title: "Across the healthcare ecosystem.",
-  text: "Hospital groups, MedTech companies, investors, institutions and local partners rarely sit at the same table. KAVELA works between them.",
+  text: "Investors, institutions, hospital groups, local partners, MedTech companies and operators rarely sit at the same table. KAVELA works between them.",
   groups: [
-    { id: "H", name: "Hospital groups", short: "Hospitals", with: "hospital groups", text: "Private and public networks running modernisation, expansion and procurement programmes." },
-    { id: "M", name: "MedTech and healthcare technology", short: "MedTech", with: "MedTech companies", text: "Device, equipment, software and digital companies building a regional presence." },
-    { id: "L", name: "Local partners", short: "Local partners", with: "local partners", text: "Distributors, licensed representatives, integrators and service partners in each market." },
-    { id: "I", name: "Institutions", short: "Institutions", with: "institutions", text: "Public health bodies, payers and agencies that shape the rules." },
-    { id: "O", name: "Healthcare operators", short: "Operators", with: "operators", text: "Clinics, diagnostics, day surgery and care beyond the hospital." },
     { id: "C", name: "Investors", short: "Investors", with: "investors", text: "Private equity and venture funds, family offices and institutional investors with a healthcare strategy." },
+    { id: "I", name: "Institutions", short: "Institutions", with: "institutions", text: "Public health bodies, payers and agencies that shape the rules." },
+    { id: "H", name: "Hospital groups", short: "Hospitals", with: "hospital groups", text: "Private and public networks running modernisation, expansion and procurement programmes." },
+    { id: "L", name: "Local partners", short: "Local partners", with: "local partners", text: "Distributors, licensed representatives, integrators and service partners in each market." },
+    { id: "M", name: "MedTech and healthcare technology", short: "MedTech", with: "MedTech companies", text: "Device, equipment, software and digital companies building a regional presence." },
+    { id: "O", name: "Healthcare operators", short: "Operators", with: "operators", text: "Clinics, diagnostics, day surgery and care beyond the hospital." },
   ],
   links: [
     ["H", "M", "modernisation programmes, pilots and procurement"],

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept C - Cinematic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bk: #07090A; --w: 1400px; --g: clamp(20px, 4vw, 56px); --eau: #7FC1B8; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, sans-serif; color: #fff; background: var(--bk); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+.w { max-width: var(--w); margin: 0 auto; padding: 0 var(--g); }
+.hd { font-family: "Inter Tight", sans-serif; letter-spacing: -0.04em; }
+
+header { position: absolute; inset: 0 0 auto 0; z-index: 5; }
+header .w { height: 88px; display: flex; align-items: center; gap: 36px; }
+header img { height: 30px; margin-right: auto; }
+header nav { display: flex; gap: 30px; font-size: 14px; color: rgba(255,255,255,.75); }
+header .cta { background: #fff; color: var(--bk); border-radius: 999px; padding: 11px 22px; font-size: 14px; font-weight: 500; }
+
+.hero { position: relative; height: 100svh; min-height: 640px; overflow: hidden; }
+.hero .img { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=2000&q=75') center 40%/cover; transform: scale(1.06); animation: kb 22s ease-out forwards; }
+@keyframes kb { to { transform: scale(1); } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,9,10,.7) 0%, rgba(7,9,10,.35) 35%, rgba(7,9,10,.9) 85%, var(--bk) 100%); }
+.net { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; }
+.net line { stroke: rgba(127,193,184,.55); stroke-width: 1; stroke-dasharray: 600; stroke-dashoffset: 600; animation: draw 2.4s ease-out forwards; }
+.net circle.n { fill: #fff; }
+.net circle.h { fill: none; stroke: var(--eau); transform-box: fill-box; transform-origin: center; animation: pulse 3s ease-out infinite; }
+.net text { font-family: "Inter Tight"; font-size: 13px; fill: rgba(255,255,255,.8); }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.4); opacity: 0; } }
+.hero-c { position: absolute; z-index: 3; left: 0; right: 0; bottom: clamp(40px, 7vh, 80px); }
+.hero h1 { font-size: clamp(52px, 8.2vw, 132px); font-weight: 400; line-height: .92; max-width: 11ch; }
+.hero-b { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: 36px; flex-wrap: wrap; }
+.hero-b p { max-width: 30rem; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.75); }
+.btn { display: inline-flex; gap: 12px; align-items: center; background: var(--eau); color: var(--bk); border-radius: 999px; padding: 18px 30px; font-weight: 500; font-size: 15px; }
+
+.marquee { border-top: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); overflow: hidden; padding: 28px 0; }
+.track { display: flex; gap: 64px; width: max-content; animation: slide 40s linear infinite; font-family: "Inter Tight"; font-size: clamp(40px, 6vw, 88px); font-weight: 300; letter-spacing: -0.03em; white-space: nowrap; }
+.track span:nth-child(odd) { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.55); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+.statement { padding: clamp(100px, 13vw, 180px) 0; }
+.statement h2 { font-size: clamp(40px, 5.6vw, 88px); font-weight: 400; line-height: 1; max-width: 16ch; }
+.statement h2 span { color: rgba(255,255,255,.35); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; background: #fff; color: var(--bk); }
+.split .ph { background: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=75') center/cover; position: sticky; top: 0; height: 100vh; }
+.split .ct { padding: clamp(64px, 8vw, 120px) clamp(24px, 5vw, 80px); }
+.split h2 { font-size: clamp(40px, 4.6vw, 72px); font-weight: 400; margin-bottom: 48px; }
+.grp { margin-bottom: 56px; }
+.grp h3 { font-family: "Inter Tight"; font-size: 15px; font-weight: 500; color: #6B7075; padding-bottom: 14px; border-bottom: 1px solid var(--bk); }
+.grp div { padding: 22px 0; border-bottom: 1px solid #E3E5E6; }
+.grp b { font-family: "Inter Tight"; font-weight: 500; font-size: 24px; letter-spacing: -0.02em; display: block; margin-bottom: 6px; }
+.grp span { font-size: 15px; color: #5B6167; line-height: 1.55; }
+
+.cards { padding: clamp(100px, 12vw, 160px) 0; }
+.cards h2 { font-size: clamp(40px, 5.6vw, 88px); font-weight: 400; margin-bottom: 56px; }
+.cards .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card { position: relative; border-radius: 24px; padding: 36px; min-height: 360px; display: flex; flex-direction: column; justify-content: flex-end; background: #111416; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+.card::before { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; top: -120px; right: -120px; background: radial-gradient(circle, rgba(127,193,184,.35), transparent 65%); }
+.card:nth-child(2)::before { background: radial-gradient(circle, rgba(127,193,184,.5), transparent 65%); }
+.card:nth-child(3)::before { background: radial-gradient(circle, rgba(127,193,184,.7), transparent 65%); }
+.card h3 { font-family: "Inter Tight"; font-size: 40px; font-weight: 400; letter-spacing: -0.03em; margin-bottom: 14px; position: relative; }
+.card p { color: rgba(255,255,255,.65); font-size: 16px; line-height: 1.6; position: relative; }
+
+.contact { padding: clamp(100px, 12vw, 160px) 0; border-top: 1px solid rgba(255,255,255,.12); }
+.contact h2 { font-size: clamp(48px, 7.4vw, 120px); font-weight: 400; line-height: .95; max-width: 13ch; margin-bottom: 56px; }
+.form { display: grid; grid-template-columns: 1fr 1fr 1.4fr auto; gap: 24px; align-items: end; }
+.form label { font-size: 13px; color: rgba(255,255,255,.55); display: block; margin-bottom: 8px; }
+.form input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,.3); color: #fff; font-size: 18px; padding: 10px 0; }
+footer .w { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; padding-bottom: 32px; border-top: 1px solid rgba(255,255,255,.12); font-size: 13px; color: rgba(255,255,255,.5); }
+footer img { height: 26px; }
+
+@media (max-width: 820px) {
+  header nav { display: none; } header img { height: 22px; }
+  .net text { font-size: 22px; }
+  .split { grid-template-columns: 1fr; } .split .ph { position: relative; height: 50vh; }
+  .cards .row, .form { grid-template-columns: 1fr; }
+  .card { min-height: 240px; }
+}
+</style>
+</head>
+<body>
+<header><div class="w">
+  <img src="/Healthcare/Eau-horizontal/kavela-healthcare-eau-horizontal-fonce.svg" alt="KAVELA Healthcare">
+  <nav><a>Approach</a><a>Practice areas</a><a>Intelligence</a></nav>
+  <a class="cta">Contact</a>
+</div></header>
+
+<div class="hero">
+  <div class="img"></div>
+  <!-- Constellation drawn over the city: Singapore at the centre of the network -->
+  <svg class="net" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <line x1="1010" y1="430" x2="880" y2="250"/><line x1="1010" y1="430" x2="1080" y2="220" style="animation-delay:.2s"/>
+    <line x1="1010" y1="430" x2="1330" y2="190" style="animation-delay:.4s"/><line x1="1010" y1="430" x2="930" y2="400" style="animation-delay:.6s"/>
+    <line x1="1010" y1="430" x2="1100" y2="600" style="animation-delay:.8s"/><line x1="1010" y1="430" x2="760" y2="300" style="animation-delay:1s;stroke-dasharray:4 7;stroke-dashoffset:0"/>
+    <line x1="1010" y1="430" x2="780" y2="560" style="animation-delay:1.2s;stroke-dasharray:4 7;stroke-dashoffset:0"/>
+    <g><circle class="n" cx="880" cy="250" r="3"/><text x="892" y="254">Thailand</text>
+       <circle class="n" cx="1080" cy="220" r="3"/><text x="1092" y="224">Vietnam</text>
+       <circle class="n" cx="1330" cy="190" r="3"/><text x="1250" y="178">Philippines</text>
+       <circle class="n" cx="930" cy="400" r="3"/><text x="860" y="392">Malaysia</text>
+       <circle class="n" cx="1100" cy="600" r="3"/><text x="1112" y="604">Indonesia</text>
+       <text x="700" y="292">Europe</text><text x="720" y="584">Mauritius</text></g>
+    <circle class="h" cx="1010" cy="430" r="8"/><circle cx="1010" cy="430" r="7" fill="#7FC1B8"/>
+    <text x="1028" y="436" style="font-size:16px;font-weight:600;fill:#fff">Singapore</text>
+  </svg>
+  <div class="hero-c"><div class="w">
+    <h1 class="hd">Healthcare access, from Singapore.</h1>
+    <div class="hero-b">
+      <p>Market access and strategic engagement for healthcare companies, operators and investors across Southeast Asia.</p>
+      <a class="btn">Discuss a priority <span>→</span></a>
+    </div>
+  </div></div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>Singapore</span><span>Malaysia</span><span>Thailand</span><span>Vietnam</span><span>Indonesia</span><span>Philippines</span><span>Europe</span><span>Mauritius</span>
+  <span>Singapore</span><span>Malaysia</span><span>Thailand</span><span>Vietnam</span><span>Indonesia</span><span>Philippines</span><span>Europe</span><span>Mauritius</span>
+</div></div>
+
+<div class="statement"><div class="w">
+  <h2 class="hd">Healthcare in Southeast Asia is not one market. <span>Each country has its own regulation, buyers, payers and decision makers.</span></h2>
+</div></div>
+
+<div class="split">
+  <div class="ph" role="img" aria-label="Kuala Lumpur at dusk"></div>
+  <div class="ct">
+    <h2 class="hd">Practice areas</h2>
+    <div class="grp"><h3>For healthcare companies</h3>
+      <div><b>Market access</b><span>Where an offer fits, who buys, and whether to work direct or through a local partner.</span></div>
+      <div><b>Hospital and operator engagement</b><span>Access to hospital groups, clinics and care platforms.</span></div>
+      <div><b>Partner selection</b><span>The right distributor, integrator or strategic partner in each market.</span></div></div>
+    <div class="grp"><h3>For private capital</h3>
+      <div><b>Healthcare deal flow</b><span>Operators and platforms that fit a healthcare investment strategy.</span></div>
+      <div><b>Portfolio support</b><span>Suppliers, partners and expansion opportunities for value creation plans.</span></div>
+      <div><b>Co-investor and LP access</b><span>Investors active in healthcare across the region.</span></div></div>
+  </div>
+</div>
+
+<div class="cards"><div class="w">
+  <h2 class="hd">From signal to execution.</h2>
+  <div class="row">
+    <div class="card"><h3>Intelligence</h3><p>Market structure, decision makers and the signals that open a window.</p></div>
+    <div class="card"><h3>Access</h3><p>Qualified counterparties and senior introductions, briefed on both sides.</p></div>
+    <div class="card"><h3>Execution</h3><p>Continued involvement until a partnership, a pilot or a transaction is decided.</p></div>
+  </div>
+</div></div>
+
+<div class="contact"><div class="w">
+  <h2 class="hd">Working on a healthcare priority in Asia?</h2>
+  <div class="form">
+    <div><label>Name</label><input></div><div><label>Email</label><input></div>
+    <div><label>The priority, in one line</label><input></div><a class="btn">Send</a>
+  </div>
+</div></div>
+<footer><div class="w"><img src="/Healthcare/Eau-horizontal/kavela-healthcare-eau-horizontal-fonce.svg" alt=""><span>The healthcare practice of KAVELA</span></div></footer>
+</body>
+</html>

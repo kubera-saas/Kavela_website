@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept A - Swiss monochrome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bk: #0B0B0C; --gr: #8A8F94; --ln: #E4E4E4; --w: 1360px; --g: clamp(20px, 3.5vw, 48px); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, sans-serif; color: var(--bk); background: #fff; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+.w { max-width: var(--w); margin: 0 auto; padding: 0 var(--g); }
+.hd { font-family: "Inter Tight", sans-serif; letter-spacing: -0.045em; font-weight: 500; }
+
+header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--ln); }
+header .w { height: 72px; display: flex; align-items: center; gap: 40px; }
+header img { height: 30px; margin-right: auto; }
+header nav { display: flex; gap: 32px; font-size: 14px; }
+header .cta { font-size: 14px; font-weight: 500; border-bottom: 1.5px solid var(--bk); padding-bottom: 2px; }
+
+.hero { padding: clamp(56px, 9vw, 120px) 0 0; }
+.hero h1 { font-size: clamp(56px, 10.4vw, 158px); line-height: .9; }
+.hero-row { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-top: clamp(40px, 6vw, 80px); align-items: end; }
+.hero-row p { grid-column: 1 / span 5; font-size: 19px; line-height: 1.55; color: #3A3D40; }
+.pill { grid-column: 10 / span 3; justify-self: end; display: inline-flex; align-items: center; gap: 14px; background: var(--bk); color: #fff; border-radius: 999px; padding: 18px 28px; font-weight: 500; font-size: 15px; }
+.pill span { font-size: 18px; }
+
+/* Longitude strip: where the practice works, west to east */
+.lon { margin-top: clamp(56px, 8vw, 110px); border-top: 1px solid var(--bk); border-bottom: 1px solid var(--ln); position: relative; height: 150px; }
+.lon svg { width: 100%; height: 100%; display: block; }
+.lon text { font-family: "Inter Tight"; font-size: 13px; fill: var(--bk); }
+.lon .muted { fill: var(--gr); }
+
+section { padding: clamp(80px, 11vw, 150px) 0; border-bottom: 1px solid var(--ln); }
+.split { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.split h2 { grid-column: 1 / span 7; font-size: clamp(40px, 5.6vw, 84px); line-height: .98; }
+.split p { grid-column: 9 / span 4; font-size: 18px; line-height: 1.6; color: #3A3D40; align-self: end; }
+
+.table-h { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-bottom: 40px; align-items: end; }
+.table-h h2 { grid-column: 1 / span 6; font-size: clamp(40px, 5.6vw, 84px); line-height: 1; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.col h3 { font-family: "Inter Tight"; font-size: 14px; font-weight: 500; color: var(--gr); padding-bottom: 16px; border-bottom: 1px solid var(--bk); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 26px 12px 26px 0; border-bottom: 1px solid var(--ln); transition: background .25s, color .25s, padding .25s; }
+.row:hover { background: var(--bk); color: #fff; padding-left: 16px; }
+.row b { font-family: "Inter Tight"; font-weight: 500; font-size: 26px; letter-spacing: -0.03em; line-height: 1.1; }
+.row span { font-size: 15px; line-height: 1.55; color: inherit; opacity: .7; }
+
+.steps { display: grid; gap: 0; }
+.step { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; align-items: baseline; padding: 28px 0; border-top: 1px solid var(--ln); }
+.step:first-child { border-top: 1px solid var(--bk); }
+.step h3 { grid-column: 1 / span 7; font-family: "Inter Tight"; font-weight: 500; letter-spacing: -0.05em; font-size: clamp(52px, 8.4vw, 128px); line-height: .95; }
+.step p { grid-column: 9 / span 4; font-size: 17px; line-height: 1.6; color: #3A3D40; }
+.step:nth-child(2) h3 { color: #6A6E72; }
+.step:nth-child(3) h3 { color: #B4B8BB; }
+
+.contact { background: var(--bk); color: #fff; border: none; }
+.contact h2 { font-size: clamp(48px, 8vw, 128px); line-height: .92; margin-bottom: 56px; }
+.form { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 24px; align-items: end; }
+.form label { font-size: 13px; color: #9A9EA2; display: block; margin-bottom: 8px; }
+.form input { width: 100%; background: transparent; border: none; border-bottom: 1px solid #45484B; color: #fff; font-size: 18px; padding: 10px 0; }
+.form button { background: #fff; color: var(--bk); border: none; border-radius: 999px; padding: 16px 28px; font-weight: 500; font-size: 15px; }
+footer { background: var(--bk); color: #8A8F94; font-size: 13px; }
+footer .w { display: flex; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; border-top: 1px solid #26282A; }
+
+@media (max-width: 820px) {
+  header nav { display: none; }
+  header img { height: 24px; }
+  .hero-row p, .pill, .split h2, .split p, .table-h h2, .step h3, .step p { grid-column: 1 / -1; }
+  .pill { justify-self: start; }
+  .cols, .form { grid-template-columns: 1fr; }
+  .col + .col { margin-top: 48px; }
+  .row { grid-template-columns: 1fr; gap: 6px; }
+  .row b { font-size: 22px; }
+  .lon { height: 120px; }
+  .lon text { font-size: 11px; }
+}
+</style>
+</head>
+<body>
+<header><div class="w">
+  <img src="/Healthcare/Eau-horizontal/kavela-healthcare-eau-horizontal-clair.svg" alt="KAVELA Healthcare">
+  <nav><a>Approach</a><a>Practice areas</a><a>Ecosystem</a><a>Intelligence</a></nav>
+  <a class="cta">Contact</a>
+</div></header>
+
+<div class="hero"><div class="w">
+  <h1 class="hd">Healthcare access across Southeast Asia.</h1>
+  <div class="hero-row">
+    <p>Market access and strategic engagement for healthcare companies, operators and investors. Anchored in Singapore.</p>
+    <a class="pill">Discuss a priority <span>→</span></a>
+  </div>
+  <div class="lon">
+    <svg viewBox="0 0 1260 150" preserveAspectRatio="none" aria-hidden="true">
+      <!-- longitude axis 0°E to 130°E; SEA markets at true longitudes, staggered vertically -->
+      <line x1="0" y1="75" x2="1260" y2="75" stroke="#0B0B0C" stroke-width="1"/>
+      <g stroke="#E4E4E4">
+        <line x1="0" y1="60" x2="0" y2="90"/><line x1="291" y1="68" x2="291" y2="82"/><line x1="582" y1="68" x2="582" y2="82"/><line x1="872" y1="68" x2="872" y2="82"/>
+      </g>
+      <g font-size="11" class="muted"><text x="4" y="105" class="muted">0°</text><text x="295" y="105" class="muted">30°E</text><text x="586" y="105" class="muted">60°E</text><text x="876" y="105" class="muted">90°E</text><text x="1167" y="105" class="muted">120°E</text></g>
+      <g>
+        <circle cx="97" cy="75" r="4" fill="#fff" stroke="#0B0B0C"/><text x="104" y="55">Europe</text>
+        <circle cx="557" cy="75" r="4" fill="#fff" stroke="#0B0B0C"/><text x="564" y="55">Mauritius</text>
+        <circle cx="974" cy="75" r="3.5" fill="#0B0B0C"/><text x="930" y="32">Thailand</text><line x1="974" y1="71" x2="974" y2="38" stroke="#0B0B0C" stroke-width=".6"/>
+        <circle cx="985" cy="75" r="3.5" fill="#0B0B0C"/><text x="992" y="128">Malaysia</text><line x1="985" y1="79" x2="985" y2="118" stroke="#0B0B0C" stroke-width=".6"/>
+        <circle cx="1035" cy="75" r="3.5" fill="#0B0B0C"/><text x="1042" y="42">Vietnam</text>
+        <circle cx="1036" cy="75" r="3.5" fill="#0B0B0C"/><text x="1043" y="112">Indonesia</text>
+        <circle cx="1173" cy="75" r="3.5" fill="#0B0B0C"/><text x="1180" y="55">Philippines</text>
+        <rect x="993" y="63" width="24" height="24" rx="5.6" fill="#235F5C"/><rect x="999.4" y="69" width="2.6" height="12" rx="1.3" fill="#F7F4EC"/><path d="M1004 69L1009.2 75L1004 81" fill="none" stroke="#F7F4EC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="990" y="17" font-weight="600">Singapore</text>
+      </g>
+    </svg>
+  </div>
+</div></div>
+
+<section><div class="w split">
+  <h2 class="hd">Healthcare in Southeast Asia is not one market.</h2>
+  <p>Each country has its own regulation, buyers, payers and decision makers. A strong product or investment thesis does not open doors on its own.</p>
+</div></section>
+
+<section><div class="w">
+  <div class="table-h"><h2 class="hd">Practice areas</h2></div>
+  <div class="cols">
+    <div class="col"><h3>Healthcare companies</h3>
+      <div class="row"><b>Market access</b><span>Where an offer fits, who buys, and whether to work direct or through a local partner.</span></div>
+      <div class="row"><b>Hospital and operator engagement</b><span>Access to hospital groups, clinics and care platforms around modernisation and expansion.</span></div>
+      <div class="row"><b>Partner selection</b><span>The right distributor, integrator or strategic partner in each market.</span></div>
+    </div>
+    <div class="col"><h3>Private capital</h3>
+      <div class="row"><b>Healthcare deal flow</b><span>Operators and platforms that fit a healthcare investment strategy.</span></div>
+      <div class="row"><b>Portfolio support</b><span>Suppliers, partners and expansion opportunities for value creation plans.</span></div>
+      <div class="row"><b>Co-investor and LP access</b><span>Investors active in healthcare across the region.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="w steps">
+  <div class="step"><h3>Intelligence</h3><p>Market structure, decision makers and the signals that open a window, mapped against a defined objective.</p></div>
+  <div class="step"><h3>Access</h3><p>Qualified counterparties and senior introductions, briefed on both sides.</p></div>
+  <div class="step"><h3>Execution</h3><p>Continued involvement until a partnership, a pilot or a transaction is decided.</p></div>
+</div></section>
+
+<section class="contact"><div class="w">
+  <h2 class="hd">Working on a healthcare priority in Asia?</h2>
+  <div class="form">
+    <div><label>Name</label><input></div>
+    <div><label>Email</label><input></div>
+    <div><label>The priority, in one line</label><input></div>
+    <button>Send</button>
+  </div>
+</div></section>
+<footer><div class="w"><span>The healthcare practice of KAVELA</span><span>kavela.co &nbsp;&nbsp; LinkedIn</span></div></footer>
+</body>
+</html>

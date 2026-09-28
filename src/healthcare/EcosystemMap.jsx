@@ -51,7 +51,7 @@ function labelPos(p, compact, r) {
 
 export default function EcosystemMap() {
   const compact = useCompact();
-  const [pinned, setPinned] = useState("M");
+  const [pinned, setPinned] = useState(groups[0].id);
   const [hover, setHover] = useState(null);
   const active = hover || pinned;
   const { W, H, cx, cy, pos } = layout(compact);
