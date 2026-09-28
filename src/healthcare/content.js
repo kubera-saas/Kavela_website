@@ -64,7 +64,7 @@ export const APPROACH = {
   steps: [
     ["Mandate", "KAVELA Healthcare partners with a client or partner around a defined objective: a market to enter, a partner to find, an opportunity to source.", "A defined objective, agreed with the client."],
     ["Business development", "Research, identification and qualification of the right partners, followed by senior outreach on the client's behalf.", "The right partners identified, qualified and approached."],
-    ["Relationship", "Coordination between the client and each counterparty, so that discussions move forward smoothly on both sides.", "Smooth, well-prepared discussions on both sides."],
+    ["Relationship", "Coordination between the client and each counterparty, so that discussions progress with clarity and discipline on both sides.", "Structured, well-prepared discussions on both sides."],
     ["Closing", "Continued involvement through negotiation, until the agreement is reached.", "Involvement until the agreement is reached."],
   ],
 };
