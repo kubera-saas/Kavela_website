@@ -6,7 +6,7 @@ export const NAV = [
   ["Approach", "#approach"],
   ["Services", "#services"],
   ["Ecosystem", "#ecosystem"],
-  ["Intelligence", "#intelligence"],
+  ["Newsletter", "#intelligence"],
 ];
 
 export const HERO = {
@@ -62,10 +62,10 @@ export const APPROACH = {
   text: "One engagement, carried by the same team from the first discussion to the final agreement.",
   /* [name, full text (computer), short text (phone)] */
   steps: [
-    ["Mandate", "KAVELA Healthcare partners with a client or partner around a defined objective: a market to enter, a partner to find, an opportunity to source.", "A defined objective, agreed with the client."],
-    ["Business development", "Research, identification and qualification of the right partners, followed by senior outreach on the client's behalf.", "The right partners identified, qualified and approached."],
-    ["Relationship", "Coordination between the client and each counterparty, so that discussions progress with clarity and discipline on both sides.", "Structured, well-prepared discussions on both sides."],
-    ["Closing", "Continued involvement through negotiation, until the agreement is reached.", "Involvement until the agreement is reached."],
+    ["Mandate", "A defined objective, agreed with the client.", "A defined objective, agreed with the client."],
+    ["Business development", "The right partners, identified and approached.", "The right partners, identified and approached."],
+    ["Relationship", "Structured coordination on both sides.", "Structured coordination on both sides."],
+    ["Closing", "Involvement until the agreement is reached.", "Involvement until the agreement is reached."],
   ],
 };
 
@@ -95,7 +95,7 @@ export const ECOSYSTEM = {
 };
 
 export const INTELLIGENCE = {
-  title: "KAVELA Health Intelligence",
+  title: "KAVELA Healthcare Newsletter",
   text: "A concise read on the transactions, regulatory changes and structural shifts shaping healthcare in Southeast Asia, and what they change commercially.",
   topics: [
     ["Transactions", "Who is acquiring, merging or raising capital, and what it changes for market access."],
@@ -103,7 +103,7 @@ export const INTELLIGENCE = {
     ["Hospital infrastructure", "New capacity, modernisation programmes and the projects behind them."],
     ["Capital", "Where healthcare investment is concentrating across the region."],
   ],
-  formTitle: "Join the Healthcare Brief",
+  formTitle: "Subscribe to the newsletter",
   formText: "The first editions are in preparation.",
 };
 
