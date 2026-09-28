@@ -104,7 +104,7 @@ export const INTELLIGENCE = {
     ["Capital", "Where healthcare investment is concentrating across the region."],
   ],
   formTitle: "Subscribe to the newsletter",
-  formText: "The first editions are in preparation.",
+  formText: "Periodic analysis of healthcare across Southeast Asia, by email.",
 };
 
 export const CONTACT = {

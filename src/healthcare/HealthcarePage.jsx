@@ -169,7 +169,7 @@ export default function HealthcarePage() {
                 <p>{INTELLIGENCE.formText}</p>
               </div>
               <ContactForm form="brief" site="healthcare" inline submitLabel="Subscribe" palette={dark}
-                successTitle="Thank you." successText="The first edition will be sent to this address." />
+                successTitle="Thank you." successText="Upcoming editions will be sent to this address." />
             </div>
           </div>
         </section>
